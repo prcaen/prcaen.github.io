@@ -1,0 +1,169 @@
+/* =============================================================================
+   HTML5 Boilerplate CSS: h5bp.com/css
+   ========================================================================== */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
+audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+audio:not([controls]) { display: none; }
+[hidden] { display: none; }
+
+html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+html, button, input, select, textarea { font-family: sans-serif; color: #343434; }
+body { margin: 0; font-size: 1em; line-height: 1.4; }
+
+::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
+::selection { background: #fe57a1; color: #fff; text-shadow: none; }
+
+a { color: #343434; text-decoration: none; }
+a:visited { color: #343434; }
+a:hover { color: #06e; }
+a:focus { outline: thin dotted; }
+a:hover, a:active { outline: 0; }
+
+abbr[title] { border-bottom: 1px dotted; }
+b, strong { font-weight: bold; }
+blockquote { margin: 1em 40px; }
+dfn { font-style: italic; }
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+ins { background: #ff9; color: #000; text-decoration: none; }
+mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
+pre, code, kbd, samp { font-family: monospace, serif; _font-family: 'courier new', monospace; font-size: 1em; }
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+q { quotes: none; }
+q:before, q:after { content: ""; content: none; }
+small { font-size: 85%; }
+
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
+dd { margin: 0 0 0 40px; }
+nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
+
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+
+svg:not(:root) { overflow: hidden; }
+
+figure { margin: 0; }
+
+form { margin: 0; }
+fieldset { border: 0; margin: 0; padding: 0; }
+label { cursor: pointer; }
+legend { border: 0; *margin-left: -7px; padding: 0; white-space: normal; }
+button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
+button, input { line-height: normal; }
+button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; *overflow: visible; }
+button[disabled], input[disabled] { cursor: default; }
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0; *width: 13px; *height: 13px; }
+input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; }
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+textarea { overflow: auto; vertical-align: top; resize: vertical; }
+input:valid, textarea:valid {  }
+input:invalid, textarea:invalid { background-color: #f0dddd; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+td { vertical-align: top; }
+
+.chromeframe { margin: 0.2em 0; background: #ccc; color: black; padding: 0.2em 0; }
+
+
+
+/* ===== Primary Styles ========================================================
+   Author: Pierrick CAEN
+   ========================================================================== */
+@import url(http://fonts.googleapis.com/css?family=Oswald);
+body { background: url(../img/bkgd.png); }
+header { width: 335px; margin: 0 auto; font-family: 'Oswald', sans-serif; color: #b5b5b5; text-align: right; }
+header #title_name { font-size: 3.775em; color: #b5b5b5; text-shadow: 0 1px #FFF, 0 -1px #929191; display: inline-block; vertical-align: top; height: 72px; margin-top: 25px; }
+header h1 { font-size: 1.125em; font-weight: normal; margin: 0; }
+#main { width: 335px; margin: 0 auto; font-family: 'Myriad Pro', 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif; }
+#main h2, #main .title_emphasize { display: block; color: #b5b5b5; text-shadow: 0 1px #FFF, 0 -1px #929191; font-weight: 600; font-size: 1.563em; margin: 0px; }
+#main p { font-size: 0.875em; margin-top: 1em; margin-bottom: 1em; }
+section.profil_section { margin-top: 90px }
+section.skill p { margin-left: 35px }
+section#github_section a.github_link i.github { line-height: 26px; }
+section#github_section p a:hover #github_font { background-position: -332px -220px}
+section#github_section p { display: inline-block; margin: 7px 0 0 7px; vertical-align: middle; }
+section#github_section p a { vertical-align: middle; line-height: 22px; }
+section#jobs { text-align: right; }
+section#cv p { line-height: 3em; }
+section#hardware_user p, section#social p { width: 220px; margin-left: auto; margin-right: auto; }
+section#hardware_user span { display:inline-block; margin-top: 7px; }
+section#todo_list div#todo_list_bkgd { background: url(../img/sprite.png) no-repeat -68px -19px; width: 244px; height: 312px; margin: 0 auto; padding: 0 10px; }
+section#todo_list span.todo_title {display: none}
+section#todo_list ol { margin-top: 0; padding-top: 55px; font: normal normal 0.813em/3.813em Arial, "Helvetica Neue", Helvetica, sans-serif; color: #939393; text-align: left}
+section#todo_list ol li { padding-left: 10px; padding-right: 20px; position: relative; }
+section#todo_list ol li span.checkbox { border: 1px solid #D1D1D1; height: 16px; width: 16px; border-radius: 5px; line-height: 26px; padding: 0; position: absolute; bottom: auto; top: 15px; right: 20px; }
+section#todo_list ol li span.checkbox i.checked { position: absolute; top: -10px; }
+
+/* Twitter */
+section#live_tweet #tweeter_feed { margin-top: 1em; margin-bottom: 1em; }
+section#live_tweet ul.tweetList { list-style-type: none; text-align: left; font: normal normal 0.875em/1.1em Arial, "Helvetica Neue", Helvetica, sans-serif; color: #939393; text-shadow: 1px 1px 0 #FFF; padding-left: 0 }
+section#live_tweet ul.tweetList li { width: 333px; }
+section#live_tweet ul.tweetList li p{ width: 245px; padding: 10px; margin: 0 0 20px 20px; float: left; position: relative; background-color: #f5f5f5; border-radius: 5px; box-shadow: 0 0 15px #9f9f9f; }
+section#live_tweet ul.tweetList li p span.hash { font-weight: bold; }
+section#live_tweet ul.tweetList li p:after {content: ""; position: absolute; top: 16px; bottom: auto; left: -8px; border-width: 8px 10px 8px 0; border-style: solid; border-color: transparent #f5f5f5; display: block; width: 0; }
+section#live_tweet ul.tweetList li p p { width: auto; padding: 0; margin: 0; float: none; background: none; border-radius: none; box-shadow: none; text-align: right; }
+section#live_tweet ul.tweetList li p p:after { content: none; }
+
+b.drive_licence { cursor:help; }
+/* Sprite */
+.sprite { background: url(../img/sprite.png) no-repeat; text-indent: -9999px; display: inline-block; font-size: 0em }
+i#bug { background-position: -339px -164px;width: 26px; height: 24px; float: left; }
+i#android { background-position: -341px -23px; width: 20px; height: 22px; float: left; }
+i#cup { background-position: -382px -176px; width: 135px; height: 176px; float: right; }
+i#user { background-position: -372px -19px; width: 124px; height: 145px; float: left; }
+i#facebook { background-position: -336px -127px; width: 26px; height: 26px }
+i#twitter { background-position: -336px -91px; width: 26px; height: 18px }
+i#cloud { background-position: -14px -221px; width: 26px; height: 19px; float: left; }
+i#kontest { background-position: -563px -220px; width: 74px; height: 25px; }
+i#reepost { background-position: -546px -266px; width: 107px; height: 33px; }
+i#idea { background-position: -502px -27px; width: 166px; height: 172px; float: right; }
+i#mac_os { background-position: -16px -76px; width: 46px; height: 57px; float: left; }
+i#linux_os { background-position: -16px -155px; width: 46px; height: 57px; float: right; }
+i#face { background-position: -11px -19px; width: 48px; height: 48px; float: left }
+i.github { background-position: -337px -51px; width: 26px; height: 26px; }
+i.checked { background-position: -46px -216px; width: 22px; height: 26px; }
+strong#github_font { background-position: -332px -198px; width: 36px; height: 16px; }
+
+a.github_link { display: inline-block ; width: 26px; height: 26px; }
+a.twitter_link { display: inline-block ; width: 26px; height: 18px; float: left; margin-top: 4px; }
+a.facebook_link { display: inline-block ; width: 26px; height: 26px; float: right; }
+
+
+/* =============================================================================
+   Non-Semantic Helper Classes
+   ========================================================================== */
+
+.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; *line-height: 0; }
+.ir br { display: none; }
+.hidden { display: none !important; visibility: hidden; }
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+.invisible { visibility: hidden; }
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }
+
+.center_section { text-align: center; }
+
+/* =============================================================================
+   Print Styles
+   ========================================================================== */
+ 
+@media print {
+  * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
+  a, a:visited { text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; } /* h5bp.com/t */
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+}
