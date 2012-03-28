@@ -73,7 +73,6 @@ td { vertical-align: top; }
 /* ===== Primary Styles ========================================================
    Author: Pierrick CAEN
    ========================================================================== */
-@import url(http://fonts.googleapis.com/css?family=Oswald);
 body { background: url(../img/bkgd.png); }
 header { width: 335px; margin: 0 auto; font-family: 'Oswald', sans-serif; color: #b5b5b5; text-align: right; }
 header #title_name { font-size: 3.775em; color: #b5b5b5; text-shadow: 0 1px #FFF, 0 -1px #929191; display: inline-block; vertical-align: top; height: 72px; margin-top: 25px; }
