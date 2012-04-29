@@ -131,7 +131,6 @@ a.github_link { display: inline-block ; width: 26px; height: 26px; }
 a.twitter_link { display: inline-block ; width: 26px; height: 18px; float: left; margin-top: 4px; }
 a.facebook_link { display: inline-block ; width: 26px; height: 26px; float: right; }
 
-
 /* =============================================================================
    Non-Semantic Helper Classes
    ========================================================================== */
