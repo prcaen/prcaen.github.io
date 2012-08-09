@@ -3,7 +3,7 @@
 */
 $(document).ready(function() {
 	$("#tweeter_feed").tweetable({
-		username: 'nimbus147',
+		username: 'prcaen',
 		time: true,
 		rotate: false,
 		speed: false, 
