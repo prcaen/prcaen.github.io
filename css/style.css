@@ -277,6 +277,20 @@ section#live_tweet ul.tweetList li p p:after {
 b.drive_licence {
   cursor: help;
 }
+
+section#friends p {
+  line-height: 48px;
+}
+
+section#friends p a {
+  vertical-align: middle;
+  font-size: .9em;
+}
+
+section#friends p i {
+  float: left;
+}
+
 /* Sprite */
 .sprite {
   background: url(../img/sprite.png) no-repeat;
@@ -325,13 +339,6 @@ i#twitter {
   height: 18px
 }
 
-i#cloud {
-  background-position: -14px -221px;
-  width: 26px;
-  height: 19px;
-  float: left;
-}
-
 i#kontest {
   background-position: -563px -220px;
   width: 74px;
@@ -372,10 +379,16 @@ i#face {
   float: left;
 }
 
+i#julien_face {
+  background-position: -11px -258px;
+  width: 48px;
+  height: 48px;
+}
+
 i#drivy {
-  background-position: -335px -352px;
-  width: 335px;
-  height: 87px;
+  background-position: -319px -359px;
+  width: 322px;
+  height: 76px;
 }
 
 i.github {
