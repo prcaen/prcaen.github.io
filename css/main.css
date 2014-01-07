@@ -259,7 +259,9 @@ a:hover i.icon-google_plus {
   height: 51px;
 }
 
-
+#twitter-widget-0 {
+  min-width: 100% !important;
+}
 
 
 /* ==========================================================================
