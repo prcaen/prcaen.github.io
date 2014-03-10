@@ -1,8 +1,8 @@
 window.onload = onWindowsLoaded();
 
 function onWindowsLoaded() {
-  if(document.getElementById("me_more") !== null)
-    document.getElementById("me_more").addEventListener("mouseenter", formatEmailEvent, false);
+  if(document.getElementById("me-more") !== null)
+    document.getElementById("me-more").addEventListener("mouseenter", formatEmailEvent, false);
   document.addEventListener("touchstart", formatEmailEvent, false);
 }
 
