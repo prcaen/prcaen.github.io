@@ -1,43 +1,18 @@
-// Directory structure
-
-// - app
-// -- images/
-// -- fonts/
-// -- scripts/
-// -- styles/
-// -- templates/ (jekyll)
-// - images
-// - fonts/
-// - scripts
-// - styles
-// - *.html
-// - Gruntfile.js
-// - package.json
-// - sitemap.xml
-// - sitemap.xml.gz
-// - robots.txt
-
-// Gitignore
-// app/templates/_site
-
-
 module.exports = function(grunt) {
   grunt.initConfig({
     app: {
       production: {
         url: 'http://pierrickcaen.fr',
-        destination: ''
+        destination: '.production'
       },
       development: {
         url: '',
-        destination: 'app/templates/_site'
+        destination: '.tmp'
       },
       jekyll: {
-        source: 'app/templates',
-        destination: 'app/templates/_site'
+        source: 'app/templates'
       },
-      root: 'app',
-      destination: ''
+      root: 'app'
     },
     autoprefixer: {
       development: {
@@ -46,6 +21,14 @@ module.exports = function(grunt) {
           cwd: '<%= app.development.destination %>/styles/',
           src: '{,*/}*.css',
           dest: '<%= app.development.destination %>/styles/'
+        }]
+      },
+      production: {
+        files: [{
+          expand: true,
+          cwd: '<%= app.production.destination %>/styles/',
+          src: '{,*/}*.css',
+          dest: '<%= app.production.destination %>/styles/'
         }]
       },
       options: {
@@ -58,6 +41,13 @@ module.exports = function(grunt) {
         cwd: '<%= app.root %>/scripts',
         src: '{,*/}*.coffee',
         dest: '<%= app.development.destination %>/scripts/',
+        ext: '.js'
+      },
+      production: {
+        expand: true,
+        cwd: '<%= app.root %>/scripts',
+        src: '{,*/}*.coffee',
+        dest: '<%= app.production.destination %>/scripts/',
         ext: '.js'
       }
     },
@@ -75,13 +65,27 @@ module.exports = function(grunt) {
         options: {
           environment: 'production',
           outputStyle: 'compressed',
-          httpPath: '<%= app.production.url %>'
+          httpPath: '<%= app.production.url %>',
+          cssDir: '<%= app.production.destination %>/styles',
         }
       },
       development: {
         files: {
-          'main.css': '{,*/}*.sass',
+          'main.css': '{,*/}*.sass, !vendor/{,*/}*.sass',
           'vendor.css': 'vendor/{,*/}*.sass'
+        }
+      }
+    },
+    connect: {
+      options: {
+        port: 9000,
+        livereload: 35729,
+        hostname: '0.0.0.0'
+      },
+      livereload: {
+        options: {
+          open: true,
+          base: ['<%= app.development.destination %>']
         }
       }
     },
@@ -89,14 +93,14 @@ module.exports = function(grunt) {
       vendor: {
         files: {
           '<%= app.production.destination %>/styles/vendor.min.css': [
-            // from temp/
+            '<%= app.production.destination %>/styles/vendor.css'
           ]
         }
       },
       main: {
         files: {
           '<%= app.production.destination %>/styles/main.min.css': [
-            // from temp/
+            '<%= app.production.destination %>/styles/main.css'
           ]
         },
         options: {
@@ -155,16 +159,27 @@ module.exports = function(grunt) {
         files: ['<%= app.root %>/scripts/{,*/}*.coffee'],
         tasks: ['coffee:development', 'jshint']
       },
+      jekyll: {
+        files: ['<%= app.jekyll.source %>/{,*/}*.*'],
+        tasks: [
+          'exec:development',
+          'compass:development',
+          'autoprefixer:development',
+          'coffee:development',
+          'jshint',
+          'copy:development'
+        ]
+      },
       options: {
-        livereload: true
+        livereload: '<%= connect.options.livereload %>'
       }
     },
     exec: {
       production: {
-        cmd: 'jekyll build --source <%= app.jekyll.source %> --destination <%= app.jekyll.destination %>'
+        cmd: 'jekyll build --source <%= app.jekyll.source %> --destination <%= app.production.destination %>'
       },
       development: {
-        cmd: 'jekyll build --source <%= app.jekyll.source %> --destination <%= app.jekyll.destination %>'
+        cmd: 'jekyll build --source <%= app.jekyll.source %> --destination <%= app.development.destination %>'
       }
     },
     replace: {
@@ -181,19 +196,26 @@ module.exports = function(grunt) {
         }]
       }
     },
-    clean: ['*.html', 'sitemap.xml', 'projects/', 'blog/', 'images/', 'fonts/', 'scripts/', 'styles/'],
+    clean: {
+      files: ['*.html', 'sitemap.xml', 'projects/', 'blog/', 'images/', 'fonts/', 'scripts/', 'styles/']
+    },
     copy: {
       development: {
         files: [
-          {expand: true, src: ['<%= app.root %>/images/**'], dest: '<%= app.jekyll.destination %>/images/'},
-          {expand: true, src: ['<%= app.root %>/fonts/*'], dest: '<%= app.jekyll.destination %>/fonts/'},
+          {expand: true, flatten: true, src: ['<%= app.root %>/images/**'], dest: '<%= app.development.destination %>/images/'},
+          {expand: true, flatten: true, src: ['<%= app.root %>/fonts/*'], dest: '<%= app.development.destination %>/fonts/'},
+        ]
+      },
+      production_output: {
+        files: [
+          {expand: true, flatten: true, src: ['<%= app.root %>/fonts/*'], dest: '<%= app.production.destination %>/fonts/'}
         ]
       },
       production: {
         files: [
           {
             expand: true,
-            cwd: ['<%= app.jekyll.destination %>'],
+            cwd: ['<%= app.jekyll.source %>'],
             src: [
               '{,*/}*.html',
               'sitemap.xml',
@@ -209,16 +231,17 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['production']);
   grunt.registerTask('build', ['production']);
   grunt.registerTask('production', [
-    'jshint',
     'clean',
     'exec:production',
     'compass:production',
-    'copy:production',
-    'autoprefixer',
+    'autoprefixer:production',
+    'coffee:production',
+    'jshint',
     'cssmin',
     'uglify',
     'imagemin',
     'svgmin',
+    'copy:production_output',
     'replace:production'
   ]);
 
@@ -230,14 +253,17 @@ module.exports = function(grunt) {
     'autoprefixer:development',
     'coffee:development',
     'jshint',
-    'copy:development'
+    'copy:development',
+    'connect:livereload',
+    'watch'
   ]);
 
   grunt.loadNpmTasks('grunt-autoprefixer');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-coffee');
+  grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-imagemin');

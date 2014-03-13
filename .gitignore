@@ -10,6 +10,5 @@ Thumbs.db
 
 # Grunt
 node_modules/*
-
-# Jekyll
-app/templates/_site
+.tmp/
+.production/
