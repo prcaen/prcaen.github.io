@@ -10,5 +10,5 @@ Thumbs.db
 
 # Grunt
 node_modules/*
-.tmp/
+.development/
 .production/

@@ -7,7 +7,7 @@ module.exports = function(grunt) {
       },
       development: {
         url: '',
-        destination: '.tmp'
+        destination: '.development'
       },
       jekyll: {
         source: 'app/templates'
