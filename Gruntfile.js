@@ -134,7 +134,7 @@ module.exports = function(grunt) {
       }
     },
     jshint: {
-      all: ['Gruntfile.js', '<%= app.development.destination %>/scripts/**/*.js']
+      all: ['Gruntfile.js', '<%= app.development.destination %>/scripts/**/*.js', '!<%= app.development.destination %>/scripts/vendors/**/*.js']
     },
     svgmin: {
       production: {
@@ -197,10 +197,16 @@ module.exports = function(grunt) {
     },
     copy: {
       development: {
-        files: [
-          {expand: true, flatten: true, src: ['<%= app.root %>/images/**'], dest: '<%= app.development.destination %>/images/'},
-          {expand: true, flatten: true, src: ['<%= app.root %>/fonts/*'], dest: '<%= app.development.destination %>/fonts/'},
-        ]
+        files: [{
+            expand: true,
+            dot: true,
+            cwd: '<%= app.root %>',
+            dest: '<%= app.development.destination %>',
+            src: [
+                'images/{,*/}*.{png,jpg,jpeg,gif}',
+                'fonts/{,*/}*.*'
+            ]
+        }]
       },
       production_output: {
         files: [

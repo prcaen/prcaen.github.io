@@ -4,7 +4,7 @@ header
   margin-bottom: 20px
   box-shadow: rgba(0, 0, 0, 0.14902) 0px 2px 4px 0px
 
-  p
+  .logo
     position: absolute
     top: 0
     left: 0
@@ -12,6 +12,7 @@ header
     height: 46px
 
     .full-name
+      color: black
       vertical-align: top
       display: inline-block
       padding: 10px 0
@@ -22,6 +23,11 @@ header
       vertical-align: top
       display: inline-block
       padding: 10px 0
+
+    @media only screen and (max-width: 767px)
+      .full-name, .job-profile
+        display: none
+
   nav
     ul
       width: 235px
