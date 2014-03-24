@@ -1,0 +1,29 @@
+[class^="button"]
+  display: inline-block
+  padding: 21px 80px
+  font-weight: 700
+  border-radius: 20px
+  text-transform: uppercase
+  letter-spacing: 1px
+  position: relative
+
+  &:hover
+    top: 2px
+
+  &:active
+    top: 6px
+
+a.button-orange, .button-orange
+  background-color: $orange
+  color: white
+  box-shadow: 0 6px darken($orange, 20)
+
+  &:hover
+    color: white
+    box-shadow: 0 4px darken($orange, 20)
+
+  &:active
+    box-shadow: none
+
+  i
+    color: white
