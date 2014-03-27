@@ -1,0 +1,11 @@
+name: Pierrick CAEN
+
+timezone: Europe/Paris
+permalink: /blog/:title.html
+navigation:
+ - title: Home
+   url: /index.html
+ - title: Projects
+   url: /projects.html
+ - title: Blog
+   url: /blog.html

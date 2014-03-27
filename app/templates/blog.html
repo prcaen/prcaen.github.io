@@ -1,0 +1,23 @@
+---
+layout: default
+title: Blog
+id: blog
+---
+
+<section class="content">
+  {% for post in site.posts %}
+  <div class="row">
+    <div class="col6 offset3">
+      <section class="box">
+        <article class="box-inner">
+          <header>
+            <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+            <date datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%d/%m/%Y' }}</date>
+          </header>
+          {{ post.excerpt }}
+        </article>
+      </section>
+    </div>
+  </div>
+  {% endfor %}
+</section>

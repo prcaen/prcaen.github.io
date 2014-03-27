@@ -1,0 +1,50 @@
+*, *:before, *:after
+  box-sizing: border-box
+
+body
+  border-top: 5px solid $orange
+  background-color: #e5e5e5
+  font: 16px / 26px "Roboto", Arial, Helvetica, Helvetica Neue, Arial
+  font-weight: 300
+  color: #262626
+  -webkit-font-smoothing: antialiased
+  margin: 0
+
+a
+  text-decoration: none
+  color: #262626
+  &:visited
+    color: #262626
+  &:hover
+    color: $orange
+
+i
+  color: #262626
+
+.content
+  margin-bottom: 30px
+
+.box
+  border: 1px solid #d8d8d8
+  border-radius: 3px
+  background-color: #FFF
+  margin-top: 20px
+  margin-bottom: 30px
+  box-shadow: 0 1px 0px #D8D8D8
+
+  &:last-child
+    margin-bottom: 15px
+
+  .box-inner
+    padding: 20px
+
+    p:last-child
+      margin-bottom: 0
+
+  h2
+    font-weight: 300
+    font-size: 20px
+    margin: 0
+    color: #999
+    margin-bottom: 20px
+    text-align: left

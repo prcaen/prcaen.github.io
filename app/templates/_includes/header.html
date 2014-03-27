@@ -1,0 +1,17 @@
+<header>
+  <a href="/" class="logo">
+    <i class="sprite me"></i>
+    <span class="full-name">Pierrick CAEN |</span>
+    <span class="job-profile">WEB &amp; Android developer</span>
+  </a>
+
+  <nav>
+    <ul>
+      {% for link in site.navigation %}
+        <li {% if page.url contains link.url or (link.title contains 'Blog' and page.url contains 'blog') %}class="active"{% endif %}>
+            <a href="{{ link.url }}">{{ link.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+</header>
