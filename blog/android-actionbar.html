@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <meta name="description" content="Ruby, PHP developer - HTML5/CSS3 - JS (jQuery, NodeJS, Socket.IO). Android developer.">
+  <meta name="author" content="Pierrick CAEN">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+
+  <title>Pierrick CAEN - Web &amp; Android developer - The Android ActionBar</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,700">
+  <link rel="stylesheet" href="/styles/vendor.css">
+  <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body id="article">
+  <header>
+  <a href="/" class="logo">
+    <i class="sprite me"></i>
+    <span class="full-name">Pierrick CAEN |</span>
+    <span class="job-profile">WEB &amp; Android developer</span>
+  </a>
+
+  <nav>
+    <ul>
+      
+        <li >
+            <a href="/index.html">Home</a>
+        </li>
+      
+        <li >
+            <a href="/projects.html">Projects</a>
+        </li>
+      
+        <li class="active">
+            <a href="/blog.html">Blog</a>
+        </li>
+      
+    </ul>
+  </nav>
+</header>
+
+  <section class="content">
+  <div class="row">
+    <div class="col12">
+      <section class="box">
+        <article class="box-inner">
+          <header>
+            <h1>The Android ActionBar</h1>
+            <date datetime="2014-01-08">08/01/2014</date>
+          </header>
+          <div class="post">
+          <p class='align-center'>
+  <img alt='ActionBar' src='/images/blog/android_action_bar.jpg' />
+</p>
+<p>The Android <strong>Action Bar</strong> was introduced in Android 3.0 (Honeycomb - API level 11). This bar allows users to view the application name and the icon in the left area and action items at the right.</p>
+
+<p>In 07 august 2013, Google Android developers released a new backward-compatible Action Bar called ActionBarCompat (<a href="http://goo.gl/aBzOmK">http://goo.gl/aBzOmK</a>). It allow to backport the ActionBar on Android 2.1 (Eclair - API level 9).</p>
+
+<p>As you can see on the post picture, at the left of the App icon, there are three small horizontal bars. This is the official sidebar and Google call Navigation Drawer.</p>
+
+<p>The Android developers documentation explain how you can implement the Navigation Drawer here: <a href="http://goo.gl/phAJy">http://goo.gl/phAJy</a></p>
+
+<p>Today, I will give you two tips about the ActionBar and the NavigationDrawer:</p>
+
+<h2 id="how_make_the_actionbar_title_clickable_on_android_under_api_11">How make the ActionBar title clickable on Android under API 11</h2>
+<div class='highlight'><pre><code class='java'><span class='kd'>private</span> <span class='kd'>static</span> <span class='kd'>final</span> <span class='kt'>boolean</span> <span class='n'>API_LEVEL_UNDER_11</span> <span class='o'>=</span> <span class='n'>android</span><span class='o'>.</span><span class='na'>os</span><span class='o'>.</span><span class='na'>Build</span><span class='o'>.</span><span class='na'>VERSION</span><span class='o'>.</span><span class='na'>SDK_INT</span> <span class='o'>&lt;</span> <span class='mi'>11</span><span class='o'>;</span>
+<span class='kd'>private</span> <span class='kt'>boolean</span> <span class='n'>navigationDrawerEnabled</span> <span class='o'>=</span> <span class='kc'>true</span><span class='o'>;</span> <span class='c1'>// Useful if your app need navigation drawer</span>
+
+<span class='nd'>@Override</span>
+<span class='kd'>protected</span> <span class='kt'>void</span> <span class='nf'>onCreate</span><span class='o'>(</span><span class='n'>Bundle</span> <span class='n'>savedInstanceState</span><span class='o'>)</span> <span class='o'>{</span>
+  <span class='k'>if</span> <span class='o'>(</span><span class='n'>API_LEVEL_UNDER_11</span><span class='o'>)</span> <span class='o'>{</span>
+    <span class='n'>getSupportActionBar</span><span class='o'>().</span><span class='na'>setCustomView</span><span class='o'>(</span><span class='n'>R</span><span class='o'>.</span><span class='na'>layout</span><span class='o'>.</span><span class='na'>partial_actionbar</span><span class='o'>);</span>
+    <span class='n'>getSupportActionBar</span><span class='o'>().</span><span class='na'>setDisplayShowCustomEnabled</span><span class='o'>(</span><span class='kc'>true</span><span class='o'>);</span>
+    <span class='o'>((</span><span class='n'>TextView</span><span class='o'>)</span> <span class='n'>getSupportActionBar</span><span class='o'>().</span><span class='na'>getCustomView</span><span class='o'>().</span><span class='na'>findViewById</span><span class='o'>(</span><span class='n'>R</span><span class='o'>.</span><span class='na'>id</span><span class='o'>.</span><span class='na'>action_bar_text</span><span class='o'>)).</span><span class='na'>setText</span><span class='o'>(</span><span class='n'>title</span><span class='o'>);</span>
+  <span class='o'>}</span> <span class='k'>else</span> <span class='o'>{</span>
+    <span class='n'>getSupportActionBar</span><span class='o'>().</span><span class='na'>setTitle</span><span class='o'>(</span><span class='n'>title</span><span class='o'>);</span>
+  <span class='o'>}</span>
+  <span class='n'>getSupportActionBar</span><span class='o'>().</span><span class='na'>setDisplayHomeAsUpEnabled</span><span class='o'>(</span><span class='kc'>true</span><span class='o'>);</span>
+  <span class='n'>getSupportActionBar</span><span class='o'>().</span><span class='na'>setHomeButtonEnabled</span><span class='o'>(</span><span class='kc'>true</span><span class='o'>);</span>
+<span class='o'>}</span>
+
+<span class='o'>...</span>
+
+<span class='kd'>public</span> <span class='kt'>void</span> <span class='nf'>onClickTitle</span><span class='o'>(</span><span class='n'>View</span> <span class='n'>v</span><span class='o'>)</span> <span class='o'>{</span>
+  <span class='k'>if</span> <span class='o'>(</span><span class='n'>navigationDrawerEnabled</span><span class='o'>)</span> <span class='o'>{</span>
+    <span class='n'>toggleDrawer</span><span class='o'>();</span>
+  <span class='o'>}</span> <span class='k'>else</span> <span class='o'>{</span>
+    <span class='n'>finish</span><span class='o'>();</span>
+  <span class='o'>}</span>
+<span class='o'>}</span>
+</code></pre></div><div class='highlight'><pre><code class='xml'><span class='nt'>&lt;LinearLayout</span>
+  <span class='na'>xmlns:android=</span><span class='s'>&quot;http://schemas.android.com/apk/res/android&quot;</span>
+  <span class='na'>android:layout_width=</span><span class='s'>&quot;match_parent&quot;</span>
+  <span class='na'>android:layout_height=</span><span class='s'>&quot;match_parent&quot;</span> <span class='nt'>&gt;</span>
+
+  <span class='nt'>&lt;TextView</span>
+      <span class='na'>android:id=</span><span class='s'>&quot;@+id/action_bar_text&quot;</span>
+      <span class='na'>android:layout_width=</span><span class='s'>&quot;wrap_content&quot;</span>
+      <span class='na'>android:layout_height=</span><span class='s'>&quot;match_parent&quot;</span>
+      <span class='na'>android:background=</span><span class='s'>&quot;@drawable/action_bar&quot;</span>
+      <span class='na'>android:clickable=</span><span class='s'>&quot;true&quot;</span>
+      <span class='na'>android:gravity=</span><span class='s'>&quot;center_vertical&quot;</span>
+      <span class='na'>android:onClick=</span><span class='s'>&quot;onClickTitle&quot;</span>
+      <span class='na'>android:paddingLeft=</span><span class='s'>&quot;5dp&quot;</span>
+      <span class='na'>android:paddingRight=</span><span class='s'>&quot;5dp&quot;</span>
+      <span class='na'>android:text=</span><span class='s'>&quot;@string/app_name&quot;</span>
+      <span class='na'>android:textSize=</span><span class='s'>&quot;21sp&quot;</span> <span class='nt'>/&gt;</span>
+<span class='nt'>&lt;/LinearLayout&gt;</span>
+</code></pre></div>
+<h2 id="how_customize_the_searchview_in_the_actionbar_in_your_activity">How customize the SearchView in the ActionBar. In your activity</h2>
+<div class='highlight'><pre><code class='java'><span class='kn'>import</span> <span class='nn'>android.support.v4.view.MenuItemCompat</span><span class='o'>;</span>
+<span class='kn'>import</span> <span class='nn'>android.support.v7.widget.SearchView</span><span class='o'>;</span>
+<span class='kn'>import</span> <span class='nn'>android.support.v7.widget.SearchView.SearchAutoComplete</span><span class='o'>;</span>
+<span class='o'>...</span>
+
+<span class='nd'>@Override</span>
+<span class='kd'>public</span> <span class='kt'>boolean</span> <span class='nf'>onCreateOptionsMenu</span><span class='o'>(</span><span class='n'>Menu</span> <span class='n'>menu</span><span class='o'>)</span> <span class='o'>{</span>
+  <span class='n'>getMenuInflater</span><span class='o'>().</span><span class='na'>inflate</span><span class='o'>(</span><span class='n'>R</span><span class='o'>.</span><span class='na'>menu</span><span class='o'>.</span><span class='na'>menu_home</span><span class='o'>,</span> <span class='n'>menu</span><span class='o'>);</span>
+  <span class='n'>MenuItem</span> <span class='n'>searchItem</span> <span class='o'>=</span> <span class='n'>menu</span><span class='o'>.</span><span class='na'>findItem</span><span class='o'>(</span><span class='n'>R</span><span class='o'>.</span><span class='na'>id</span><span class='o'>.</span><span class='na'>item_search</span><span class='o'>);</span>
+  <span class='n'>mSearchView</span> <span class='o'>=</span> <span class='o'>(</span><span class='n'>SearchView</span><span class='o'>)</span> <span class='n'>MenuItemCompat</span><span class='o'>.</span><span class='na'>getActionView</span><span class='o'>(</span><span class='n'>searchItem</span><span class='o'>);</span>
+  <span class='n'>mSearchView</span><span class='o'>.</span><span class='na'>setOnQueryTextListener</span><span class='o'>(</span><span class='k'>this</span><span class='o'>);</span>
+  <span class='n'>mSearchView</span><span class='o'>.</span><span class='na'>setQueryHint</span><span class='o'>(</span><span class='n'>getString</span><span class='o'>(</span><span class='n'>R</span><span class='o'>.</span><span class='na'>string</span><span class='o'>.</span><span class='na'>text</span><span class='o'>));</span>
+  <span class='n'>SearchAutoComplete</span> <span class='n'>searchAutoComplete</span> <span class='o'>=</span> <span class='o'>(</span><span class='n'>SearchAutoComplete</span><span class='o'>)</span> <span class='n'>mSearchView</span><span class='o'>.</span><span class='na'>findViewById</span><span class='o'>(</span><span class='n'>android</span><span class='o'>.</span><span class='na'>support</span><span class='o'>.</span><span class='na'>v7</span><span class='o'>.</span><span class='na'>appcompat</span><span class='o'>.</span><span class='na'>R</span><span class='o'>.</span><span class='na'>id</span><span class='o'>.</span><span class='na'>search_src_text</span><span class='o'>);</span>
+  <span class='n'>searchAutoComplete</span><span class='o'>.</span><span class='na'>setHintTextColor</span><span class='o'>(</span><span class='n'>mRes</span><span class='o'>.</span><span class='na'>getColor</span><span class='o'>(</span><span class='n'>android</span><span class='o'>.</span><span class='na'>R</span><span class='o'>.</span><span class='na'>color</span><span class='o'>.</span><span class='na'>white</span><span class='o'>));</span>
+  <span class='n'>searchAutoComplete</span><span class='o'>.</span><span class='na'>setTextSize</span><span class='o'>(</span><span class='mi'>14</span><span class='o'>);</span>
+  <span class='k'>return</span> <span class='kd'>super</span><span class='o'>.</span><span class='na'>onCreateOptionsMenu</span><span class='o'>(</span><span class='n'>menu</span><span class='o'>);</span>
+<span class='o'>}</span>
+</code></pre></div>
+<p>If I find more tips, I will edit this article. I really hope you will find this article useful. P.﻿</p>
+
+          </div>
+        </article>
+      </section>
+    </div>
+  </div>
+</section>
+
+
+  <script>
+    var _gaq=[['_setAccount','UA-24545456-1'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script>
+  <script src="/scripts/vendor.js"></script>
+  <script src="/scripts/main.js"></script>
+</body>
+</html>

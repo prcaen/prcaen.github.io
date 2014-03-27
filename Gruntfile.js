@@ -35,6 +35,18 @@ module.exports = function(grunt) {
         browsers: ['last 1 version']
       }
     },
+    concat: {
+      development: {
+        files: {
+          '<%= app.development.destination %>/scripts/vendor.js': [
+            '<%= app.development.destination %>/scripts/vendors/{,*/}*.js'
+          ],
+          '<%= app.development.destination %>/scripts/main.js': [
+            '<%= app.development.destination %>/scripts/main.js'
+          ],
+        }
+      }
+    },
     coffee: {
       development: {
         expand: true,
@@ -88,14 +100,14 @@ module.exports = function(grunt) {
     cssmin: {
       vendor: {
         files: {
-          '<%= app.production.destination %>/styles/vendor.min.css': [
+          '<%= app.production.destination %>/styles/vendor.css': [
             '<%= app.production.destination %>/styles/vendor.css'
           ]
         }
       },
       main: {
         files: {
-          '<%= app.production.destination %>/styles/main.min.css': [
+          '<%= app.production.destination %>/styles/main.css': [
             '<%= app.production.destination %>/styles/main.css'
           ]
         },
@@ -107,15 +119,15 @@ module.exports = function(grunt) {
     uglify: {
       vendor: {
         files: {
-          '<%= app.production.destination %>/scripts/vendor.min.js': [
-            // from temp/
+          '<%= app.production.destination %>/scripts/vendor.js': [
+            '<%= app.production.destination %>/scripts/vendors/*.js'
           ]
         }
       },
       main: {
         files: {
-          '<%= app.production.destination %>/scripts/main.min.js': [
-            // from temp/
+          '<%= app.production.destination %>/scripts/main.js': [
+            '<%= app.production.destination %>/scripts/main.js'
           ]
         },
         options: {
@@ -129,12 +141,12 @@ module.exports = function(grunt) {
           expand: true,
           cwd: '<%= app.root %>/images',
           src: ['**/*.{png,jpg,gif}'],
-          dest: '<%= app.production.destination %>/images'
+          dest: '<%= app.production.destination %>/images/'
         }]
       }
     },
     jshint: {
-      all: ['Gruntfile.js', '<%= app.development.destination %>/scripts/**/*.js', '!<%= app.development.destination %>/scripts/vendors/**/*.js']
+      all: ['Gruntfile.js', '<%= app.development.destination %>/scripts/main.js']
     },
     svgmin: {
       production: {
@@ -178,20 +190,6 @@ module.exports = function(grunt) {
         cmd: 'jekyll build --source <%= app.jekyll.source %> --destination <%= app.development.destination %>'
       }
     },
-    replace: {
-      production: {
-        src: '<%= app.production.destination %>/{,*/}*.html',
-        dest: '<%= app.production.destination %>/',
-        replacements: [{
-          from: '.css',
-          to: '.min.css'
-        },
-        {
-          from: '.js',
-          to: '.min.js'
-        }]
-      }
-    },
     clean: {
       files: ['*.html', 'sitemap.xml', 'projects/', 'blog/', 'images/', 'fonts/', 'scripts/', 'styles/']
     },
@@ -208,24 +206,34 @@ module.exports = function(grunt) {
             ]
         }]
       },
-      production_output: {
-        files: [
-          {expand: true, flatten: true, src: ['<%= app.root %>/fonts/*'], dest: '<%= app.production.destination %>/fonts/'}
-        ]
+      production_temp: {
+        files: [{
+            expand: true,
+            dot: true,
+            cwd: '<%= app.root %>',
+            dest: '<%= app.production.destination %>',
+            src: [
+                'images/{,*/}*.{png,jpg,jpeg,gif}',
+                'fonts/{,*/}*.*'
+            ]
+        }]
       },
       production: {
-        files: [
-          {
-            expand: true,
-            cwd: ['<%= app.jekyll.source %>'],
-            src: [
-              '{,*/}*.html',
-              'sitemap.xml',
-              'fonts/*.*'
-            ],
-            dest: '<%= app.production.destination %>/'
-          }
-        ]
+        files: [{
+          expand: true,
+          dot: true,
+          cwd: '<%= app.production.destination %>',
+          dest: '',
+          src: [
+            '{,*/}*.html',
+            'fonts/{,*/}*.*',
+            'images/{,*/}*.{png,jpg,jpeg,gif}',
+            'scripts/main.js',
+            'scripts/vendor.js',
+            'styles/main.css',
+            'styles/vendor.css'
+          ]
+        }]
       }
     }
   });
@@ -241,10 +249,8 @@ module.exports = function(grunt) {
     'jshint',
     'cssmin',
     'uglify',
-    'imagemin',
-    'svgmin',
-    'copy:production_output',
-    'replace:production'
+    'copy:production_temp',
+    'copy:production'
   ]);
 
   grunt.registerTask('serve', ['development']);
@@ -254,6 +260,7 @@ module.exports = function(grunt) {
     'compass:development',
     'autoprefixer:development',
     'coffee:development',
+    'concat:development',
     'jshint',
     'copy:development',
     'connect:livereload',
@@ -262,6 +269,7 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-autoprefixer');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-connect');
