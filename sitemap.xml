@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
+    <url>
+        <loc>http://pierrickcaen.fr/blog/android-actionbar.html</loc>
+        <lastmod>2014-04-07T13:43:53+02:00</lastmod>
+    </url>
+    <url>
+        <loc>http://pierrickcaen.fr/blog/symfony-sql-functions.html</loc>
+        <lastmod>2014-04-07T13:43:53+02:00</lastmod>
+    </url>
+    <url>
+        <loc>http://pierrickcaen.fr/blog.html</loc>
+        <lastmod>2014-04-07T13:43:53+02:00</lastmod>
+    </url>
+    <url>
+        <loc>http://pierrickcaen.fr/</loc>
+        <lastmod>2014-03-27T19:57:08+01:00</lastmod>
+    </url>
+    <url>
+        <loc>http://pierrickcaen.fr/projects.html</loc>
+        <lastmod>2014-03-27T19:57:08+01:00</lastmod>
+    </url>
+</urlset>

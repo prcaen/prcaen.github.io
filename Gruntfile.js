@@ -231,7 +231,8 @@ module.exports = function(grunt) {
             'scripts/main.js',
             'scripts/vendor.js',
             'styles/main.css',
-            'styles/vendor.css'
+            'styles/vendor.css',
+            'sitemap.xml'
           ]
         }]
       }
