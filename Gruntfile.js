@@ -39,7 +39,7 @@ module.exports = function(grunt) {
       development: {
         files: {
           '<%= app.development.destination %>/scripts/vendor.js': [
-            '<%= app.development.destination %>/scripts/vendors/{,*/}*.js'
+            '<%= app.development.destination %>/scripts/vendors/retina.js'
           ],
           '<%= app.development.destination %>/scripts/main.js': [
             '<%= app.development.destination %>/scripts/main.js'
