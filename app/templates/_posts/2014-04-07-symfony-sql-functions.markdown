@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Use SQL functions with Doctrine 2 and Symfony 2"
-date:   2014-01-08 15:38:41
+date:   2014-04-07 00:00:00
 categories: blog, symfony
 excerpt: How to use SQL functions with Doctrine 2 and Symfony 2?
 ---
