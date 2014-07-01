@@ -68,7 +68,7 @@
 
 <h2 id="how-make-the-actionbar-title-clickable-on-android-under-api-11">How make the ActionBar title clickable on Android under API 11</h2>
 
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">boolean</span> <span class="n">API_LEVEL_UNDER_11</span> <span class="o">=</span> <span class="n">android</span><span class="o">.</span><span class="na">os</span><span class="o">.</span><span class="na">Build</span><span class="o">.</span><span class="na">VERSION</span><span class="o">.</span><span class="na">SDK_INT</span> <span class="o">&lt;</span> <span class="mi">11</span><span class="o">;</span>
+<div class="highlight"><pre><code class="java"><span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">boolean</span> <span class="n">API_LEVEL_UNDER_11</span> <span class="o">=</span> <span class="n">android</span><span class="o">.</span><span class="na">os</span><span class="o">.</span><span class="na">Build</span><span class="o">.</span><span class="na">VERSION</span><span class="o">.</span><span class="na">SDK_INT</span> <span class="o">&lt;</span> <span class="mi">11</span><span class="o">;</span>
 <span class="kd">private</span> <span class="kt">boolean</span> <span class="n">navigationDrawerEnabled</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span> <span class="c1">// Useful if your app need navigation drawer</span>
 
 <span class="nd">@Override</span>
@@ -92,9 +92,10 @@
   <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
     <span class="n">finish</span><span class="o">();</span>
   <span class="o">}</span>
-<span class="o">}</span></code></pre></div>
+<span class="o">}</span>
+</code></pre></div>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;LinearLayout</span>
+<div class="highlight"><pre><code class="xml"><span class="nt">&lt;LinearLayout</span>
   <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
   <span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
   <span class="na">android:layout_height=</span><span class="s">&quot;match_parent&quot;</span> <span class="nt">&gt;</span>
@@ -111,11 +112,12 @@
       <span class="na">android:paddingRight=</span><span class="s">&quot;5dp&quot;</span>
       <span class="na">android:text=</span><span class="s">&quot;@string/app_name&quot;</span>
       <span class="na">android:textSize=</span><span class="s">&quot;21sp&quot;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;/LinearLayout&gt;</span></code></pre></div>
+<span class="nt">&lt;/LinearLayout&gt;</span>
+</code></pre></div>
 
 <h2 id="how-customize-the-searchview-in-the-actionbar-in-your-activity">How customize the SearchView in the ActionBar. In your activity</h2>
 
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">android.support.v4.view.MenuItemCompat</span><span class="o">;</span>
+<div class="highlight"><pre><code class="java"><span class="kn">import</span> <span class="nn">android.support.v4.view.MenuItemCompat</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">android.support.v7.widget.SearchView</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">android.support.v7.widget.SearchView.SearchAutoComplete</span><span class="o">;</span>
 <span class="o">...</span>
@@ -131,7 +133,8 @@
   <span class="n">searchAutoComplete</span><span class="o">.</span><span class="na">setHintTextColor</span><span class="o">(</span><span class="n">mRes</span><span class="o">.</span><span class="na">getColor</span><span class="o">(</span><span class="n">android</span><span class="o">.</span><span class="na">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">white</span><span class="o">));</span>
   <span class="n">searchAutoComplete</span><span class="o">.</span><span class="na">setTextSize</span><span class="o">(</span><span class="mi">14</span><span class="o">);</span>
   <span class="k">return</span> <span class="kd">super</span><span class="o">.</span><span class="na">onCreateOptionsMenu</span><span class="o">(</span><span class="n">menu</span><span class="o">);</span>
-<span class="o">}</span></code></pre></div>
+<span class="o">}</span>
+</code></pre></div>
 
 <p>If I find more tips, I will edit this article.
 I really hope you will find this article useful.
