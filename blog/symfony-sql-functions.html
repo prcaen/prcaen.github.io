@@ -26,7 +26,7 @@
   <nav>
     <ul>
       
-        <li class="active">
+        <li >
             <a href="/">Home</a>
         </li>
       
@@ -57,7 +57,7 @@ In this tutorial I will show you how to do this with PostgreSQL and the function
 
 <p>Let’s do it:</p>
 
-<div class="highlight"><pre><code class="php"><span class="cp">&lt;?php</span>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
 <span class="k">namespace</span> <span class="nx">Acme\DemoBundle\Query\Postgresql</span><span class="p">;</span>
 
@@ -82,14 +82,13 @@ In this tutorial I will show you how to do this with PostgreSQL and the function
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">delimiter</span> <span class="o">=</span> <span class="nv">$parser</span><span class="o">-&gt;</span><span class="na">ArithmeticPrimary</span><span class="p">();</span>
         <span class="nv">$parser</span><span class="o">-&gt;</span><span class="na">match</span><span class="p">(</span><span class="nx">Lexer</span><span class="o">::</span><span class="na">T_CLOSE_PARENTHESIS</span><span class="p">);</span>
     <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+<span class="p">}</span></code></pre></div>
 
 <p>If you run this code this will not work because this functionnality is not available natively in Doctrine 2. It’s necessary to create a doctrine extension to do that:</p>
 
 <p>In <code>Acme\DemoBundle\Query\Postgresql</code> folder create a file named: <code>StringAggFunction.php</code> and put the code:</p>
 
-<div class="highlight"><pre><code class="php"><span class="cp">&lt;?php</span>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="nv">$queryBuilder</span> <span class="o">=</span> <span class="nv">$entityManager</span><span class="o">-&gt;</span><span class="na">getRepository</span><span class="p">(</span><span class="s1">&#39;AcmeDemoBundle:Sample&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">createQueryBuilder</span><span class="p">(</span><span class="s1">&#39;s&#39;</span><span class="p">);</span>
 
 <span class="nv">$queryBuilder</span><span class="o">-&gt;</span><span class="na">select</span><span class="p">(</span>
@@ -97,17 +96,15 @@ In this tutorial I will show you how to do this with PostgreSQL and the function
   <span class="s2">&quot;SELECT string_agg(sa.name, &#39;,&#39;)</span>
 <span class="s2">  FROM AcmeDemoBundle:AnotherSample sa</span>
 <span class="s2">  WHERE sa.sample = s.id AS names&quot;</span>
-<span class="err">&#39;</span><span class="p">)</span>
-</code></pre></div>
+<span class="err">&#39;</span><span class="p">)</span></code></pre></div>
 
 <p>Now we have to configure Symfony to use this new doctrine extension:</p>
 
-<div class="highlight"><pre><code class="yaml"><span class="l-Scalar-Plain">doctrine</span><span class="p-Indicator">:</span>
+<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">doctrine</span><span class="p-Indicator">:</span>
   <span class="l-Scalar-Plain">orm</span><span class="p-Indicator">:</span>
     <span class="l-Scalar-Plain">dql</span><span class="p-Indicator">:</span>
       <span class="l-Scalar-Plain">string_functions</span><span class="p-Indicator">:</span>
-        <span class="l-Scalar-Plain">string_agg</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Acme\DemoBundle\Query\Postgresql\StringAggFunction</span>
-</code></pre></div>
+        <span class="l-Scalar-Plain">string_agg</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Acme\DemoBundle\Query\Postgresql\StringAggFunction</span></code></pre></div>
 
 <p>From now you will be able to this function in Doctrine.</p>
 

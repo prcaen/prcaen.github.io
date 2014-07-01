@@ -2,7 +2,7 @@
 layout: post
 title:  "The Android ActionBar"
 date:   2014-01-08 15:38:41
-categories: android
+categories: blog, android
 excerpt: This article will give you some tips about Android ActionBar
 ---
 
