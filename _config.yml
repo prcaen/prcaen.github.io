@@ -1,1 +1,19 @@
+name: Pierrick CAEN
+url: http://pierrickcaen.fr
+timezone: Europe/Paris
+permalink: /blog/:title.html
 markdown: kramdown
+navigation:
+  - title: Home
+    url: /
+  - title: Projects
+    url: /projects.html
+  - title: Blog
+    url: /blog.html
+sitemap:
+  include_posts:
+    - "/blog.html"
+sass:
+  style: :compressed
+gems:
+  - jekyll-sitemap

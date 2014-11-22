@@ -1,3 +1,7 @@
+---
+# Main
+---
+
 onWindowsLoaded = ->
   if document.getElementById('me-more') isnt null
     document.getElementById('me-more').addEventListener 'mouseenter', formatEmailEvent, false

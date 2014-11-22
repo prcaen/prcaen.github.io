@@ -1,14 +1,6 @@
-*.sass-cache
-
+_site
+.sass-cache
 .DS_Store
 Thumbs.db
-.cache
-.project
-.settings
 *.sublime-project
 *.sublime-workspace
-
-# Grunt
-node_modules/*
-.development/
-.production/
