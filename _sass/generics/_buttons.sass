@@ -1,29 +1,30 @@
 [class^="button"]
-  display: inline-block
-  padding: 21px 80px
-  font-weight: 700
-  border-radius: 20px
-  text-transform: uppercase
-  letter-spacing: 1px
-  position: relative
-
-  &:hover
-    top: 2px
-
-  &:active
-    top: 6px
-
-a.button-orange, .button-orange
+  text-decoration: none
+  color: #fff
   background-color: $orange
-  color: white
-  box-shadow: 0 6px darken($orange, 20)
+  text-align: center
+  letter-spacing: .5px
+  transition: .2s ease-out
+  cursor: pointer
+  border: none
+  border-radius: 2px
+  display: inline-block
+  height: 36px
+  font-size: 14px
+  font-weight: normal
+  line-height: 36px
+  outline: 0
+  padding: 0 2rem
+  text-transform: uppercase
+  vertical-align: middle
+  -webkit-tap-highlight-color: transparent
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)
 
-  &:hover
-    color: white
-    box-shadow: 0 4px darken($orange, 20)
+  &:hover, &:visited
+    color: #fff
+    background-color: ligthen(#2bbbad, 20)
 
   &:active
-    box-shadow: none
 
   i
     color: white

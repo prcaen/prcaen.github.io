@@ -8,11 +8,6 @@ navigation:
     url: /
   - title: Projects
     url: /projects.html
-  - title: Blog
-    url: /blog.html
-sitemap:
-  include_posts:
-    - "/blog.html"
 sass:
   style: :compressed
 gems:
