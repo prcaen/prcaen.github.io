@@ -24,13 +24,17 @@ body > header
       display: inline-block
       padding: 10px 0
 
-    @media only screen and (max-width: 767px)
-      .full-name, .job-profile
+    @media only screen and (max-width: 675px)
+      .job-profile
+        display: none
+
+    @media only screen and (max-width: 365px)
+      .full-name
         display: none
 
   nav
     ul
-      width: 235px
+      width: 165px
       margin: 0 auto
       padding: 0
       li
