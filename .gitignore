@@ -4,3 +4,4 @@ _site
 Thumbs.db
 *.sublime-project
 *.sublime-workspace
+.jekyll-cache/
