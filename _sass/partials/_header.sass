@@ -1,60 +1,31 @@
-body > header
-  position: relative
+.mdl-layout__header
   background-color: #F5F5F5
   margin-bottom: 20px
-  box-shadow: rgba(0, 0, 0, 0.14902) 0px 2px 4px 0px
 
-  .logo
-    position: absolute
-    top: 0
-    left: 0
-    margin: 0
-    height: 46px
+  a:hover
+    color: black
 
-    .full-name
-      color: black
-      vertical-align: top
-      display: inline-block
-      padding: 10px 0
-      margin-left: 6px
+  .full-name
+    vertical-align: top
+    margin-left: 6px
 
-    .job-profile
-      color: #999
-      vertical-align: top
-      display: inline-block
-      padding: 10px 0
+  .job-profile
+    color: $gray
+    vertical-align: top
 
-    @media only screen and (max-width: 675px)
-      .job-profile
-        display: none
+.mdl-layout__header-row
+  .mdl-navigation__link
+    color: $gray
+    border-bottom: 2px solid transparent
+    &.is-active, &:hover
+      border-bottom: 2px solid $green
 
-    @media only screen and (max-width: 365px)
-      .full-name
-        display: none
+@media (prefers-color-scheme: dark)
+  .mdl-layout__header
+    background-color: $gray-14
 
-  nav
-    ul
-      width: 170px
-      margin: 0 auto
-      padding: 0
-      li
-        height: 44px
-        line-height: 44px
-        margin-left: 18px
-        margin-right: 18px
-        vertical-align: middle
-        display: inline-block
-        border-bottom: 2px solid #F5F5F5
-        a
-          color: #737373
-          text-decoration: none
-          font-size: 14px
-          display: block
-          &:hover
-            color: #737373
-        &.active, &:hover
-          border-bottom: 2px solid $orange
-        &.active a
-          color: #262626
-          font-weight: bold
-
+    a:hover
+      color: white
+  .mdl-layout__header-row
+    .mdl-navigation__link
+      color: white

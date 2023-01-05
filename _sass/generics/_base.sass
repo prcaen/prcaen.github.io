@@ -2,11 +2,10 @@
   box-sizing: border-box
 
 body
-  border-top: 5px solid $orange
-  background-color: #e5e5e5
+  border-top: 5px solid $green
+  background-color: $gray-95
   font: 16px / 26px "Roboto", Arial, Helvetica, Helvetica Neue, Arial
   font-weight: 300
-  color: #262626
   -webkit-font-smoothing: antialiased
   margin: 0
 
@@ -16,10 +15,36 @@ a
   &:visited
     color: #262626
   &:hover
-    color: $orange
+    color: $green
 
 i
   color: #262626
 
 .content
   margin-bottom: 30px
+
+.align-center
+  text-align: center
+
+.mdl-button--accent.mdl-button--accent.mdl-button--raised, .mdl-button--accent.mdl-button--accent.mdl-button--fab
+  background: $green
+  &:hover
+    background: $green
+
+@media (prefers-color-scheme: dark)
+  body
+    background-color: $gray-14
+  a
+    color: #FFF
+    &:visited
+      color: #FFF
+    &:hover
+      color: $green
+  .mdl-card
+    background-color: #000
+  .mdl-shadow--2dp
+    box-shadow: none
+  .mdl-card__title
+    color: #FFF
+  .mdl-card__supporting-text
+    color: #FFF

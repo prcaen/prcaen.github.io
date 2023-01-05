@@ -1,5 +1,5 @@
 name: Pierrick CAEN
-url: http://pierrickcaen.fr
+url: https://pierrickcaen.fr
 timezone: Europe/Paris
 permalink: /blog/:title.html
 markdown: kramdown
@@ -10,5 +10,13 @@ navigation:
     url: /projects.html
 sass:
   style: :compressed
-gems:
+coffee:
+  style: :compressed
+plugins:
   - jekyll-sitemap
+defaults:
+  -
+    scope:
+      path:            "bicycleparking/*"
+    values:
+      sitemap:         false

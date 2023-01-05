@@ -1,16 +1,16 @@
-<header>
-  <a href="/" class="logo">
-    <span class="full-name">Pierrick CAEN</span>
-    <span class="job-profile"> | Senior Android Engineer</span>
-  </a>
+<header class="mdl-layout__header">
+  <div class="mdl-layout__header-row">
+    <a href="/" class="mdl-layout-title">
+      <span class="full-name">Pierrick CAEN</span>
+      <span class="job-profile mdl-cell--hide-phone"> | Senior Android Engineer</span>
+    </a>
 
-  <nav>
-    <ul>
-      {% for link in site.navigation %}
-        <li {% if page.navigation == link.url or (link.title contains 'Blog' and page.url contains 'blog') %}class="active"{% endif %}>
-            <a href="{{ link.url }}">{{ link.title }}</a>
-        </li>
-      {% endfor %}
-    </ul>
-  </nav>
+    <div class="mdl-layout-spacer"></div>
+
+    <nav class="mdl-navigation">
+        {% for link in site.navigation %}
+          <a href="{{ link.url }}" class="mdl-navigation__link {% if page.navigation == link.url or (link.title contains 'Blog' and page.url contains 'blog') %}is-active{% endif %}">{{ link.title }}</a>
+        {% endfor %}
+    </nav>
+  </div>
 </header>
