@@ -1,11 +1,10 @@
 ---
+# Main
 ---
 
 onWindowsLoaded = ->
-  if document.getElementById('me-more') isnt null
-    document.getElementById('me-more').addEventListener 'mouseenter', formatEmailEvent, false
-
-  document.addEventListener 'touchstart', formatEmailEvent, false
+  document.getElementById('me-more').addEventListener 'mouseenter', formatEmailEvent
+  document.getElementById('me-more').addEventListener 'touchstart', formatEmailEvent
 
   return
 
@@ -19,4 +18,4 @@ formatEmailEvent = (e) ->
 formatEmail = (email) ->
   email.replace('[at]', '@').replace '{.}', '.'
 
-window.onload = onWindowsLoaded()
+document.addEventListener "DOMContentLoaded", onWindowsLoaded
