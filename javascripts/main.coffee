@@ -11,7 +11,6 @@ onWindowsLoaded = ->
 formatEmailEvent = (e) ->
   emailElement = document.getElementById('email')
   emailElement.innerHTML = formatEmail(emailElement.innerHTML)
-  emailElement.href = formatEmail(emailElement.href)
 
   return
 
