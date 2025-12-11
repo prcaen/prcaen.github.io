@@ -1,6 +1,8 @@
-import { personalInfo } from '../data/personal';
+import { personalInfo, getYearsOfExperience } from '../data/personal';
 
 export function About() {
+  const yearsOfExperience = getYearsOfExperience();
+  
   return (
     <section id="about" className="py-24 md:py-32">
       <div className="max-w-6xl mx-auto px-6">
@@ -20,10 +22,6 @@ export function About() {
                   <div className="flex items-center gap-4 text-cream/80">
                     <span className="text-3xl">📍</span>
                     <span>{personalInfo.location}</span>
-                  </div>
-                  <div className="flex items-center gap-4 text-cream/80">
-                    <span className="text-3xl">💼</span>
-                    <span>8+ years of experience</span>
                   </div>
                   <div className="flex items-center gap-4 text-cream/80">
                     <span className="text-3xl">🎓</span>
@@ -55,7 +53,7 @@ export function About() {
             </div>
 
             <div className="mt-12 grid grid-cols-3 gap-6">
-              <StatCard number="8+" label="Years of Experience" />
+              <StatCard number={`${yearsOfExperience}+`} label="Years of Experience" />
               <StatCard number="3" label="Top Tech Companies" />
               <StatCard number="50M+" label="Users Impacted" />
             </div>
