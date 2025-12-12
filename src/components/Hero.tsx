@@ -98,18 +98,17 @@ export function Hero() {
             <div className="relative">
               <div className="w-64 h-64 md:w-80 md:h-80 rounded-3xl bg-gradient-to-br from-accent/20 to-accent/5 p-1">
                 <div className="w-full h-full rounded-3xl bg-cream flex items-center justify-center overflow-hidden">
-                  {/* Placeholder avatar with initials */}
-                  <div className="w-full h-full bg-gradient-to-br from-charcoal to-charcoal-light flex items-center justify-center">
-                    <span className="font-display text-6xl md:text-7xl text-cream/90">
-                      {personalInfo.name.split(' ').map(n => n[0]).join('')}
-                    </span>
-                  </div>
+                <img
+                    src="/me.jpg"
+                    alt={personalInfo.name}
+                    className="w-full h-full object-cover rounded-3xl"
+                  />
                 </div>
               </div>
               {/* Floating elements */}
               <div className="absolute -top-4 -right-4 px-4 py-2 bg-white rounded-xl shadow-lg animate-float">
                 <span className="text-2xl">🤖</span>
-                <span className="text-sm font-medium ml-2">Android</span>
+                <span className="text-sm font-medium ml-2 inline-block">Android</span>
               </div>
               <div className="absolute -bottom-4 -left-4 px-4 py-2 bg-white rounded-xl shadow-lg animate-float" style={{ animationDelay: '1s' }}>
                 <span className="text-2xl">⚡</span>

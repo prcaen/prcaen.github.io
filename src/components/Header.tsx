@@ -52,14 +52,6 @@ export function Header() {
               </a>
             </li>
           ))}
-          <li>
-            <a
-              href={personalInfo.resume}
-              className="text-sm font-semibold px-4 py-2 bg-charcoal text-cream rounded-full hover:bg-accent transition-colors"
-            >
-              Resume
-            </a>
-          </li>
         </ul>
 
         {/* Mobile Menu Button */}
@@ -104,14 +96,6 @@ export function Header() {
               </a>
             </li>
           ))}
-          <li className="pt-4">
-            <a
-              href={personalInfo.resume}
-              className="inline-block text-sm font-semibold px-6 py-3 bg-charcoal text-cream rounded-full hover:bg-accent transition-colors"
-            >
-              Download Resume
-            </a>
-          </li>
         </ul>
       </div>
     </header>

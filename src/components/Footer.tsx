@@ -13,7 +13,7 @@ export function Footer() {
           </span>
 
           <p className="text-cream/40 text-sm text-center">
-            © {currentYear} {personalInfo.name}. Built with React, TypeScript & Tailwind CSS.
+            © {currentYear} {personalInfo.name}
           </p>
         </div>
       </div>

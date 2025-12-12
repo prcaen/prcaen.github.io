@@ -6,7 +6,7 @@ export const personalInfo = {
   name: "Pierrick Caen",
   title: "Senior Android & Product Engineer",
   tagline: "Building delightful mobile experiences",
-  email: "pierrick.caen@gmail.com",
+  email: "mail@pierrickcaen.fr",
   location: "Paris, France",
   careerStartYear: CAREER_START_YEAR,
   
@@ -24,8 +24,6 @@ export const personalInfo = {
     linkedin: "https://www.linkedin.com/in/prcaen",
     medium: "https://medium.com/@prcaen"
   },
-  
-  resume: "/resume.pdf",
   
   availability: {
     status: "unavailable",

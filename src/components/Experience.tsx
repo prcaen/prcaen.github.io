@@ -51,9 +51,17 @@ function ExperienceCard({
       {/* Content */}
       <div className={`w-full md:w-1/2 pl-12 md:pl-0 ${isEven ? 'md:pr-16' : 'md:pl-16'}`}>
         <div className="group relative p-6 md:p-8 rounded-2xl bg-charcoal-light/50 border border-cream/10 hover:border-accent/30 transition-all">
-          {/* Company logo placeholder */}
-          <div className="absolute -top-4 -right-4 w-16 h-16 rounded-xl bg-cream/10 flex items-center justify-center text-2xl font-bold text-accent">
-            {experience.company[0]}
+          {/* Company logo */}
+          <div className="absolute -top-4 -right-4 w-16 h-16 rounded-xl bg-white flex items-center justify-center p-3 shadow-lg">
+            {experience.logo ? (
+              <img 
+                src={experience.logo} 
+                alt={`${experience.company} logo`}
+                className="w-full h-full object-contain"
+              />
+            ) : (
+              <span className="text-2xl font-bold text-accent">{experience.company[0]}</span>
+            )}
           </div>
 
           {/* Date badge (desktop) */}
