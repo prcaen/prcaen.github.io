@@ -1,8 +1,10 @@
-import { personalInfo } from '../data/personal';
+import { personalInfo, getYearsOfExperience } from '../data/personal';
 
 export function Hero() {
+  const yearsOfExperience = getYearsOfExperience();
+
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 pb-12">
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 right-[10%] w-72 h-72 bg-accent/10 rounded-full blur-3xl animate-float" />
@@ -49,14 +51,27 @@ export function Hero() {
                   />
                 </svg>
               </span>
-              <span className="block mt-2 text-charcoal/60">
+              <span className="block mt-2 text-charcoal/60 text-3xl md:text-4xl lg:text-5xl">
                 {personalInfo.title}
               </span>
             </h1>
 
-            <p className="text-lg md:text-xl text-charcoal/60 max-w-xl mx-auto lg:mx-0 mb-8 opacity-0 animate-fade-up stagger-2">
+            <p className="text-lg md:text-xl text-charcoal/60 max-w-xl mx-auto lg:mx-0 mb-6 opacity-0 animate-fade-up stagger-2">
               {personalInfo.about.short}
             </p>
+
+            {/* Quick info badges */}
+            <div className="flex flex-wrap gap-3 justify-center lg:justify-start mb-8 opacity-0 animate-fade-up stagger-2">
+              <span className="inline-flex items-center gap-2 px-4 py-2 bg-charcoal/5 rounded-full text-sm font-medium text-charcoal/70">
+                <span>📍</span> {personalInfo.location}
+              </span>
+              <span className="inline-flex items-center gap-2 px-4 py-2 bg-charcoal/5 rounded-full text-sm font-medium text-charcoal/70">
+                <span>💼</span> {yearsOfExperience}+ years
+              </span>
+              <span className="inline-flex items-center gap-2 px-4 py-2 bg-charcoal/5 rounded-full text-sm font-medium text-charcoal/70">
+                <span>🚀</span> 50M+ users impacted
+              </span>
+            </div>
 
             <div className="flex flex-wrap gap-4 justify-center lg:justify-start opacity-0 animate-fade-up stagger-3">
               <a
@@ -69,15 +84,15 @@ export function Hero() {
                 </svg>
               </a>
               <a
-                href="#projects"
+                href="#experience"
                 className="inline-flex items-center gap-2 px-6 py-3 border-2 border-charcoal/20 text-charcoal font-semibold rounded-full hover:border-accent hover:text-accent transition-all"
               >
-                View projects
+                View experience
               </a>
             </div>
 
             {/* Social links */}
-            <div className="flex gap-4 mt-12 justify-center lg:justify-start opacity-0 animate-fade-up stagger-4">
+            <div className="flex gap-4 mt-10 justify-center lg:justify-start opacity-0 animate-fade-up stagger-4">
               {Object.entries(personalInfo.social).map(([platform, url]) => (
                 <a
                   key={platform}
@@ -98,7 +113,7 @@ export function Hero() {
             <div className="relative">
               <div className="w-64 h-64 md:w-80 md:h-80 rounded-3xl bg-gradient-to-br from-accent/20 to-accent/5 p-1">
                 <div className="w-full h-full rounded-3xl bg-cream flex items-center justify-center overflow-hidden">
-                <img
+                  <img
                     src="/me.jpg"
                     alt={personalInfo.name}
                     className="w-full h-full object-cover rounded-3xl"
@@ -119,7 +134,7 @@ export function Hero() {
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0 animate-fade-in stagger-5">
+        <div className="mt-12 flex justify-center opacity-0 animate-fade-in stagger-6">
           <div className="flex flex-col items-center gap-2 text-charcoal/40">
             <span className="text-xs font-medium tracking-wider uppercase">Scroll</span>
             <div className="w-5 h-8 border-2 border-current rounded-full flex justify-center pt-1">
@@ -129,6 +144,17 @@ export function Hero() {
         </div>
       </div>
     </section>
+  );
+}
+
+function StatCard({ number, label }: { number: string; label: string }) {
+  return (
+    <div className="text-center p-4 rounded-2xl bg-charcoal/5">
+      <span className="block text-2xl md:text-3xl font-bold text-accent">
+        {number}
+      </span>
+      <span className="text-xs md:text-sm text-charcoal/60 mt-1 block">{label}</span>
+    </div>
   );
 }
 
@@ -156,4 +182,3 @@ function SocialIcon({ platform }: { platform: string }) {
       return null;
   }
 }
-
