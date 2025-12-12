@@ -125,9 +125,13 @@ export function Hero() {
                 <span className="text-2xl">🤖</span>
                 <span className="text-sm font-medium ml-2 inline-block">Android</span>
               </div>
-              <div className="absolute -bottom-4 -left-4 px-4 py-2 bg-white rounded-xl shadow-lg animate-float" style={{ animationDelay: '1s' }}>
-                <span className="text-2xl">⚡</span>
-                <span className="text-sm font-medium ml-2">Kotlin</span>
+              <div className="absolute -bottom-4 -right-4 px-4 py-2 bg-white rounded-xl shadow-lg animate-float" style={{ animationDelay: '1.6s' }}>
+                <span className="text-2xl">🧠</span>
+                <span className="text-sm font-medium ml-2">Product</span>
+              </div>
+              <div className="absolute -top-4 -start-4 px-4 py-2 bg-white rounded-xl shadow-lg animate-float" style={{ animationDelay: '1.6s' }}>
+                <span className="text-2xl">📱</span>
+                <span className="text-sm font-medium ml-2">UI/UX</span>
               </div>
             </div>
           </div>

@@ -48,6 +48,15 @@ function ExperienceCard({
         {experience.startDate} — {experience.endDate}
       </div>
 
+      {/* Date badge (desktop) - positioned next to the timeline dot */}
+      <div 
+        className={`hidden md:block absolute left-1/2 top-1/2 -translate-y-1/2 text-sm font-medium text-cream/60 whitespace-nowrap ${
+          isEven ? 'translate-x-4' : '-translate-x-full -ml-4'
+        }`}
+      >
+        {experience.startDate} — {experience.endDate}
+      </div>
+
       {/* Content */}
       <div className={`w-full md:w-1/2 pl-12 md:pl-0 ${isEven ? 'md:pr-16' : 'md:pl-16'}`}>
         <div className="group relative p-6 md:p-8 rounded-2xl bg-charcoal-light/50 border border-cream/10 hover:border-accent/30 transition-all">
@@ -62,13 +71,6 @@ function ExperienceCard({
             ) : (
               <span className="text-2xl font-bold text-accent">{experience.company[0]}</span>
             )}
-          </div>
-
-          {/* Date badge (desktop) */}
-          <div className="hidden md:block absolute top-8 text-sm text-cream/50" style={{
-            [isEven ? 'right' : 'left']: '-140px'
-          }}>
-            {experience.startDate} — {experience.endDate}
           </div>
 
           <div className="mb-4 mt-2 md:mt-0">
