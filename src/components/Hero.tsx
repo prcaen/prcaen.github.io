@@ -151,17 +151,6 @@ export function Hero() {
   );
 }
 
-function StatCard({ number, label }: { number: string; label: string }) {
-  return (
-    <div className="text-center p-4 rounded-2xl bg-charcoal/5">
-      <span className="block text-2xl md:text-3xl font-bold text-accent">
-        {number}
-      </span>
-      <span className="text-xs md:text-sm text-charcoal/60 mt-1 block">{label}</span>
-    </div>
-  );
-}
-
 function SocialIcon({ platform }: { platform: string }) {
   switch (platform) {
     case 'github':

@@ -1,10 +1,8 @@
 import { useState, useEffect } from 'react';
-import { personalInfo } from '../data/personal';
 
 const navLinks = [
   { href: '#experience', label: 'Experience' },
   { href: '#projects', label: 'Projects' },
-  { href: '#skills', label: 'Skills' },
   { href: '#blog', label: 'Blog' },
   { href: '#contact', label: 'Contact' }
 ];
@@ -23,21 +21,13 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
           ? 'bg-cream/90 backdrop-blur-md shadow-sm py-3'
           : 'bg-transparent py-6'
-      }`}
+        }`}
     >
       <nav className="max-w-6xl mx-auto px-6 flex items-center justify-between">
-        <a
-          href="#"
-          className="font-display text-2xl text-charcoal hover:text-accent transition-colors"
-        >
-          {personalInfo.name.split(' ')[0]}
-          <span className="text-accent">.</span>
-        </a>
-
+        <div></div>
         {/* Desktop Navigation */}
         <ul className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
@@ -60,28 +50,24 @@ export function Header() {
           aria-label="Toggle menu"
         >
           <span
-            className={`w-6 h-0.5 bg-charcoal transition-all ${
-              isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''
-            }`}
+            className={`w-6 h-0.5 bg-charcoal transition-all ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''
+              }`}
           />
           <span
-            className={`w-6 h-0.5 bg-charcoal transition-all ${
-              isMobileMenuOpen ? 'opacity-0' : ''
-            }`}
+            className={`w-6 h-0.5 bg-charcoal transition-all ${isMobileMenuOpen ? 'opacity-0' : ''
+              }`}
           />
           <span
-            className={`w-6 h-0.5 bg-charcoal transition-all ${
-              isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''
-            }`}
+            className={`w-6 h-0.5 bg-charcoal transition-all ${isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''
+              }`}
           />
         </button>
       </nav>
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden absolute top-full left-0 right-0 bg-cream/95 backdrop-blur-md transition-all ${
-          isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
-        }`}
+        className={`md:hidden absolute top-full left-0 right-0 bg-cream/95 backdrop-blur-md transition-all ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+          }`}
       >
         <ul className="px-6 py-8 space-y-4">
           {navLinks.map((link) => (
