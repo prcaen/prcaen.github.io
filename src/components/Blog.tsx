@@ -4,20 +4,18 @@ export function Blog() {
   return (
     <section id="blog" className="py-24 md:py-32">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-          <div>
-            <span className="text-accent font-semibold tracking-wider uppercase text-sm">
-              Blog
-            </span>
-            <h2 className="font-display text-4xl md:text-5xl text-charcoal dark:text-cream mt-4">
-              Latest <span className="text-accent">Articles</span>
-            </h2>
-          </div>
+        <div className="text-center mb-12">
+          <span className="text-accent font-semibold tracking-wider uppercase text-sm">
+            Blog
+          </span>
+          <h2 className="font-display text-4xl md:text-5xl text-charcoal dark:text-cream mt-4">
+            Latest <span className="text-accent">Articles</span>
+          </h2>
           <a
             href={personalInfo.social.medium}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-charcoal/70 dark:text-cream/70 hover:text-accent transition-colors font-medium"
+            className="inline-flex items-center gap-2 text-charcoal/70 dark:text-cream/70 hover:text-accent transition-colors font-medium mt-4"
           >
             View all on Medium
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -2,7 +2,7 @@ import { personalInfo } from '../data/personal';
 
 export function Hero() {
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 pb-12">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-24 pb-12">
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 right-[10%] w-72 h-72 bg-accent/10 rounded-full blur-3xl animate-float" />
@@ -119,7 +119,7 @@ export function Hero() {
                 </div>
               </div>
               {/* Floating elements */}
-              <div className="absolute -top-4 -right-4 px-4 py-2 bg-white dark:bg-charcoal-light rounded-xl shadow-lg animate-float inline-flex items-center">
+              <div className="absolute -bottom-4 -left-4 px-4 py-2 bg-white dark:bg-charcoal-light rounded-xl shadow-lg animate-float inline-flex items-center">
                 <span className="text-2xl">🤖</span>
                 <span className="text-sm font-medium ml-2 inline-block text-charcoal dark:text-cream">Android</span>
               </div>
