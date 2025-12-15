@@ -11,7 +11,7 @@ export const personalInfo = {
   careerStartYear: CAREER_START_YEAR,
   
   about: {
-    short: `Passionate about building products that people actually enjoy using.`
+    short: `I've spent the last ${getYearsOfExperience()} years crafting Android apps from startups to products reaching over 100 million users. I care deeply about the product and the user experience`
   },
   
   social: {

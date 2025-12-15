@@ -66,10 +66,10 @@ export function Hero() {
                 <span>📍</span> {personalInfo.location}
               </span>
               <span className="inline-flex items-center gap-2 px-4 py-2 bg-charcoal/5 rounded-full text-sm font-medium text-charcoal/70">
-                <span>💼</span> {yearsOfExperience}+ years
+                <span>📱</span>7+ apps shipped
               </span>
               <span className="inline-flex items-center gap-2 px-4 py-2 bg-charcoal/5 rounded-full text-sm font-medium text-charcoal/70">
-                <span>🚀</span> 50M+ users impacted
+                <span>🏢</span> Medium · BlaBlaCar · Yubo
               </span>
             </div>
 
@@ -121,15 +121,15 @@ export function Hero() {
                 </div>
               </div>
               {/* Floating elements */}
-              <div className="absolute -top-4 -right-4 px-4 py-2 bg-white rounded-xl shadow-lg animate-float">
+              <div className="absolute -top-4 -right-4 px-4 py-2 bg-white rounded-xl shadow-lg animate-float inline-flex items-center">
                 <span className="text-2xl">🤖</span>
                 <span className="text-sm font-medium ml-2 inline-block">Android</span>
               </div>
-              <div className="absolute -bottom-4 -right-4 px-4 py-2 bg-white rounded-xl shadow-lg animate-float" style={{ animationDelay: '1.6s' }}>
+              <div className="absolute -bottom-4 -right-4 px-4 py-2 bg-white rounded-xl shadow-lg animate-float inline-flex items-center" style={{ animationDelay: '1.6s' }}>
                 <span className="text-2xl">🧠</span>
                 <span className="text-sm font-medium ml-2">Product</span>
               </div>
-              <div className="absolute -top-4 -start-4 px-4 py-2 bg-white rounded-xl shadow-lg animate-float" style={{ animationDelay: '1.6s' }}>
+              <div className="absolute -top-4 -start-4 px-4 py-2 bg-white rounded-xl shadow-lg animate-float inline-flex items-center" style={{ animationDelay: '1.6s' }}>
                 <span className="text-2xl">📱</span>
                 <span className="text-sm font-medium ml-2">UI/UX</span>
               </div>
@@ -148,6 +148,17 @@ export function Hero() {
         </div>
       </div>
     </section>
+  );
+}
+
+function StatCard({ number, label }: { number: string; label: string }) {
+  return (
+    <div className="text-center p-4 rounded-2xl bg-charcoal/5">
+      <span className="block text-2xl md:text-3xl font-bold text-accent">
+        {number}
+      </span>
+      <span className="text-xs md:text-sm text-charcoal/60 mt-1 block">{label}</span>
+    </div>
   );
 }
 
