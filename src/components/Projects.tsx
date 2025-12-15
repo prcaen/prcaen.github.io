@@ -65,13 +65,19 @@ function getPrimaryLink(project: typeof projects[0]): string | undefined {
 // Special card for Android apps with screenshot
 function AppCard({ project }: { project: typeof projects[0] }) {
   const primaryLink = getPrimaryLink(project);
+  const hasLink = !!primaryLink;
+
+  const CardWrapper = hasLink ? 'a' : 'div';
+  const cardProps = hasLink ? {
+    href: primaryLink,
+    target: "_blank",
+    rel: "noopener noreferrer",
+  } : {};
 
   return (
-    <a
-      href={primaryLink}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group block relative rounded-3xl bg-gradient-to-br from-charcoal to-charcoal-light overflow-hidden border border-charcoal/10 hover:border-accent/30 transition-all hover:-translate-y-1 cursor-pointer"
+    <CardWrapper
+      {...cardProps}
+      className={`group block relative rounded-3xl bg-gradient-to-br from-charcoal to-charcoal-light overflow-hidden border border-charcoal/10 transition-all ${hasLink ? 'hover:border-accent/30 hover:-translate-y-1 cursor-pointer' : ''}`}
     >
       {/* Screenshot area */}
       <div className="relative h-96 md:h-[450px] overflow-hidden bg-gradient-to-br from-charcoal-light to-charcoal">
@@ -142,20 +148,26 @@ function AppCard({ project }: { project: typeof projects[0] }) {
           </div>
         )}
       </div>
-    </a>
+    </CardWrapper>
   );
 }
 
 // Website card with screenshot
 function WebsiteCard({ project }: { project: typeof projects[0] }) {
   const primaryLink = getPrimaryLink(project);
+  const hasLink = !!primaryLink;
+
+  const CardWrapper = hasLink ? 'a' : 'div';
+  const cardProps = hasLink ? {
+    href: primaryLink,
+    target: "_blank",
+    rel: "noopener noreferrer",
+  } : {};
 
   return (
-    <a
-      href={primaryLink}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group block relative rounded-3xl bg-gradient-to-br from-cream-dark to-cream dark:from-charcoal-light dark:to-charcoal overflow-hidden border border-charcoal/10 dark:border-cream/10 hover:border-accent/30 transition-all hover:-translate-y-1 cursor-pointer"
+    <CardWrapper
+      {...cardProps}
+      className={`group block relative rounded-3xl bg-gradient-to-br from-cream-dark to-cream dark:from-charcoal-light dark:to-charcoal overflow-hidden border border-charcoal/10 dark:border-cream/10 transition-all ${hasLink ? 'hover:border-accent/30 hover:-translate-y-1 cursor-pointer' : ''}`}
     >
       {/* Screenshot area */}
       <div className="relative h-56 md:h-64 overflow-hidden bg-gradient-to-br from-cream-dark to-cream dark:from-charcoal-light dark:to-charcoal">
@@ -193,20 +205,26 @@ function WebsiteCard({ project }: { project: typeof projects[0] }) {
           {project.description}
         </p>
       </div>
-    </a>
+    </CardWrapper>
   );
 }
 
 // Regular project card (open-source, tools)
 function ProjectCard({ project }: { project: typeof projects[0] }) {
   const primaryLink = getPrimaryLink(project);
+  const hasLink = !!primaryLink;
+
+  const CardWrapper = hasLink ? 'a' : 'div';
+  const cardProps = hasLink ? {
+    href: primaryLink,
+    target: "_blank",
+    rel: "noopener noreferrer",
+  } : {};
 
   return (
-    <a
-      href={primaryLink}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group block relative rounded-3xl bg-gradient-to-br from-cream-dark/80 to-cream-dark/30 dark:from-charcoal-light/80 dark:to-charcoal-light/30 p-6 md:p-8 border border-charcoal/5 dark:border-cream/5 hover:border-accent/20 transition-all hover:-translate-y-1 cursor-pointer"
+    <CardWrapper
+      {...cardProps}
+      className={`group block relative rounded-3xl bg-gradient-to-br from-cream-dark/80 to-cream-dark/30 dark:from-charcoal-light/80 dark:to-charcoal-light/30 p-6 md:p-8 border border-charcoal/5 dark:border-cream/5 transition-all ${hasLink ? 'hover:border-accent/20 hover:-translate-y-1 cursor-pointer' : ''}`}
     >
       {/* Category badge */}
       <div className="flex items-center justify-between mb-6">
@@ -232,7 +250,9 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
       </p>
 
       {/* Hover effect */}
-      <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-accent/0 to-accent/0 group-hover:from-accent/5 group-hover:to-transparent transition-all -z-10" />
-    </a>
+      {hasLink && (
+        <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-accent/0 to-accent/0 group-hover:from-accent/5 group-hover:to-transparent transition-all -z-10" />
+      )}
+    </CardWrapper>
   );
 }
