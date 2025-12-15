@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pierrick Caen - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fff;
+            padding: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        @media print {
+            body {
+                padding: 20px;
+            }
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #E85D04;
+        }
+        
+        .header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+        }
+        
+        .header .title {
+            font-size: 18px;
+            color: #6B7280;
+            margin-bottom: 12px;
+        }
+        
+        .header .contact {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            font-size: 14px;
+            color: #4B5563;
+        }
+        
+        .header .contact a {
+            color: #4B5563;
+            text-decoration: none;
+        }
+        
+        .header .contact a:hover {
+            color: #E85D04;
+        }
+        
+        .header .contact a img {
+            width: 16px;
+            height: 16px;
+            vertical-align: middle;
+            margin-right: 4px;
+        }
+        
+        .section {
+            margin-bottom: 28px;
+        }
+        
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #E85D04;
+            margin-bottom: 16px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid #E5E7EB;
+        }
+        
+        .experience-item, .project-item {
+            margin-bottom: 24px;
+        }
+        
+        .experience-header, .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+        
+        .experience-title, .project-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        
+        .experience-company, .project-category {
+            font-size: 15px;
+            color: #4B5563;
+            margin-bottom: 4px;
+        }
+        
+        .experience-date, .project-date {
+            font-size: 14px;
+            color: #6B7280;
+            white-space: nowrap;
+        }
+        
+        .experience-location {
+            font-size: 14px;
+            color: #6B7280;
+            font-style: italic;
+        }
+        
+        .experience-description {
+            font-size: 14px;
+            color: #4B5563;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+        
+        .experience-missions {
+            margin: 10px 0;
+        }
+        
+        .experience-missions ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .experience-missions li {
+            font-size: 14px;
+            color: #374151;
+            margin-bottom: 6px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .experience-missions li:before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #E85D04;
+        }
+        
+        .publication-link {
+            color: #E85D04;
+            text-decoration: none;
+            font-size: 14px;
+            margin-left: 8px;
+        }
+        
+        .publication-link:hover {
+            text-decoration: underline;
+        }
+        
+        .languages-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            font-size: 14px;
+            color: #374151;
+        }
+        
+        .language-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .language-item strong {
+            color: #1a1a1a;
+        }
+        
+        .technologies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 10px;
+        }
+        
+        .tech-tag {
+            font-size: 12px;
+            padding: 4px 10px;
+            background: #F5F0E8;
+            border-radius: 12px;
+            color: #1a1a1a;
+        }
+        
+        .summary {
+            font-size: 15px;
+            color: #374151;
+            line-height: 1.7;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .project-item {
+            padding: 12px;
+            background: #F9FAFB;
+            border-radius: 6px;
+        }
+        
+        .project-description {
+            font-size: 13px;
+            color: #6B7280;
+            margin-top: 6px;
+        }
+        
+        .skills-section {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        
+        .skill-category {
+            margin-bottom: 16px;
+        }
+        
+        .skill-category h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+        
+        .skill-category .tech-tag {
+            display: inline-block;
+            margin: 2px 4px 2px 0;
+        }
+        
+        @media print {
+            .section {
+                page-break-inside: avoid;
+            }
+            
+            .experience-item, .project-item {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Pierrick Caen</h1>
+        <div class="title">Senior Android / Product Engineer</div>
+        <div class="contact">
+            <span>📍 Paris, France</span>
+            <a href="mailto:mail@pierrickcaen.fr">✉️ mail@pierrickcaen.fr</a>
+            <a href="https://pierrickcaen.fr">🌐 pierrickcaen.fr</a>
+            <a href="https://github.com/prcaen">💻 github.com/prcaen</a>
+            <a href="https://www.linkedin.com/in/prcaen">💼 linkedin.com/in/prcaen</a>
+            <a href="https://medium.com/@prcaen">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 4px;">
+                    <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
+                </svg>
+                medium.com/@prcaen
+            </a>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Summary</h2>
+        <p class="summary">
+            Senior Android Engineer with 13+ years of experience building mobile applications from startups to products reaching over 100 million users. 
+            Specialized in Kotlin, Jetpack Compose, and product engineering. Passionate about creating delightful user experiences and leading technical teams. 
+            Built and shipped 7+ Android applications, contributing to products used by millions worldwide.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Experience</h2>
+        
+        <div class="experience-item">
+            <div class="experience-header">
+                <div>
+                    <div class="experience-title">Senior Android Engineer / Product Engineer</div>
+                    <div class="experience-company">Medium</div>
+                    <div class="experience-location">Paris (Remote)</div>
+                </div>
+                <div class="experience-date">2022 - Present</div>
+            </div>
+            <div class="experience-missions">
+                <ul>
+                    <li>Product engineer for the Growth team</li>
+                    <li>Senior Android contributor for multiple teams</li>
+                </ul>
+            </div>
+            <div class="technologies">
+                <span class="tech-tag">Kotlin</span>
+                <span class="tech-tag">Jetpack Compose</span>
+                <span class="tech-tag">Coroutines</span>
+                <span class="tech-tag">Dagger/Hilt</span>
+                <span class="tech-tag">GraphQL</span>
+                <span class="tech-tag">Coil</span>
+            </div>
+        </div>
+
+        <div class="experience-item">
+            <div class="experience-header">
+                <div>
+                    <div class="experience-title">Lead Android Engineer</div>
+                    <div class="experience-company">Yubo</div>
+                    <div class="experience-location">Paris, France</div>
+                </div>
+                <div class="experience-date">2017 - 2022</div>
+            </div>
+            <div class="experience-description">
+                Built the Android application with 10M downloads and 4.4 stars rating from scratch
+            </div>
+            <div class="experience-missions">
+                <ul>
+                    <li>Developed real-time video streaming features with WebRTC integration</li>
+                    <li>Led a team of 6 engineers</li>
+                </ul>
+            </div>
+            <div class="technologies">
+                <span class="tech-tag">Kotlin</span>
+                <span class="tech-tag">WebRTC</span>
+                <span class="tech-tag">RxJava</span>
+                <span class="tech-tag">Firebase</span>
+                <span class="tech-tag">MVVM</span>
+                <span class="tech-tag">Live streaming</span>
+            </div>
+        </div>
+
+        <div class="experience-item">
+            <div class="experience-header">
+                <div>
+                    <div class="experience-title">Lead Software Engineer</div>
+                    <div class="experience-company">BlaBlaCar</div>
+                    <div class="experience-location">Paris, France</div>
+                </div>
+                <div class="experience-date">2015 - 2017</div>
+            </div>
+            <div class="experience-description">
+                Contributed to the world's leading carpooling platform serving millions of users.
+            </div>
+            <div class="experience-missions">
+                <ul>
+                    <li>Created the Trust Tribe</li>
+                    <li>Lead Software Engineer in a team of 5 software engineers</li>
+                    <li>Built the Lead Engineer role @BlaBlaCar</li>
+                </ul>
+            </div>
+            <div class="technologies">
+                <span class="tech-tag">Kotlin</span>
+                <span class="tech-tag">Java</span>
+                <span class="tech-tag">RxJava</span>
+                <span class="tech-tag">MVP</span>
+                <span class="tech-tag">Retrofit</span>
+            </div>
+        </div>
+
+        <div class="experience-item">
+            <div class="experience-header">
+                <div>
+                    <div class="experience-title">Software Engineer</div>
+                    <div class="experience-company">MFG Labs</div>
+                    <div class="experience-location">Paris, France</div>
+                </div>
+                <div class="experience-date">2013 - 2015</div>
+            </div>
+            <div class="experience-missions">
+                <ul>
+                    <li>Build an Android application for Warner Bros</li>
+                    <li>Contributed to the development of Warner Bros France website</li>
+                </ul>
+            </div>
+            <div class="technologies">
+                <span class="tech-tag">Java</span>
+                <span class="tech-tag">Scala</span>
+                <span class="tech-tag">Play Framework</span>
+                <span class="tech-tag">PostgreSQL</span>
+            </div>
+        </div>
+
+        <div class="experience-item">
+            <div class="experience-header">
+                <div>
+                    <div class="experience-title">Software Engineer</div>
+                    <div class="experience-company">Getaround</div>
+                    <div class="experience-location">Paris, France</div>
+                </div>
+                <div class="experience-date">2012 - 2013</div>
+            </div>
+            <div class="experience-missions">
+                <ul>
+                    <li>Be the first Android engineer at Getaround</li>
+                    <li>Contributed to the scale the company as an early employee</li>
+                </ul>
+            </div>
+            <div class="technologies">
+                <span class="tech-tag">Android</span>
+                <span class="tech-tag">Java</span>
+                <span class="tech-tag">Ruby on Rails</span>
+                <span class="tech-tag">Git</span>
+                <span class="tech-tag">CI/CD</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Key Projects</h2>
+        <div class="projects-grid">
+            <div class="project-item">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">Medium</div>
+                        <div class="project-category">Android App</div>
+                    </div>
+                </div>
+                <div class="project-description">
+                    The official Medium Android app - where good ideas find you. 10M+ downloads, 4.6★ rating.
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">Yubo</div>
+                        <div class="project-category">Android App</div>
+                    </div>
+                </div>
+                <div class="project-description">
+                    Social platform for Gen-Z to make new friends through live streaming. 10M+ downloads, 4.4★ rating.
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">BlaBlaCar</div>
+                        <div class="project-category">Android App</div>
+                    </div>
+                </div>
+                <div class="project-description">
+                    The world's leading carpooling platform connecting millions of travelers. 100M+ downloads, 4.6★ rating.
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">Getaround</div>
+                        <div class="project-category">Android App</div>
+                    </div>
+                </div>
+                <div class="project-description">
+                    Car sharing marketplace to rent cars from people nearby. 1M+ downloads, 4.5★ rating.
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">Parking à vélo</div>
+                        <div class="project-category">Android App</div>
+                    </div>
+                </div>
+                <div class="project-description">
+                    Find bike parking spots in French cities. 500+ downloads.
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">Prix des carburants</div>
+                        <div class="project-category">Android App</div>
+                    </div>
+                </div>
+                <div class="project-description">
+                    Compare fuel prices at gas stations near you in France.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-section">
+            <div class="skill-category">
+                <h4>Languages</h4>
+                <span class="tech-tag">Kotlin</span>
+                <span class="tech-tag">Java</span>
+                <span class="tech-tag">Scala</span>
+            </div>
+            <div class="skill-category">
+                <h4>Android</h4>
+                <span class="tech-tag">Jetpack Compose</span>
+                <span class="tech-tag">Coroutines</span>
+                <span class="tech-tag">MVVM</span>
+                <span class="tech-tag">Dagger/Hilt</span>
+                <span class="tech-tag">RxJava</span>
+            </div>
+            <div class="skill-category">
+                <h4>Technologies</h4>
+                <span class="tech-tag">GraphQL</span>
+                <span class="tech-tag">WebRTC</span>
+                <span class="tech-tag">Firebase</span>
+                <span class="tech-tag">Retrofit</span>
+                <span class="tech-tag">Coil</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Languages</h2>
+        <div class="languages-list">
+            <div class="language-item">
+                <strong>French:</strong> Native
+            </div>
+            <div class="language-item">
+                <strong>English:</strong> Professional
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Publications</h2>
+        <div class="experience-item">
+            <div class="experience-header">
+                <div>
+                    <div class="experience-title">
+                        Medium Android App — Migrating from Apollo Kotlin 3 to 4: Lessons Learned
+                        <a href="https://medium.engineering/medium-android-app-migrating-from-apollo-kotlin-3-to-4-lessons-learned-ff8d0d861cdb" target="_blank" class="publication-link">Read on Medium ↗</a>
+                    </div>
+                    <div class="experience-company">Medium Engineering</div>
+                </div>
+                <div class="experience-date">Dec 2025</div>
+            </div>
+        </div>
+        <div class="experience-item">
+            <div class="experience-header">
+                <div>
+                    <div class="experience-title">
+                        Cowboy Cruiser ST : une déception à 2689€
+                        <a href="https://medium.pierrickcaen.fr/cowboy-cruiser-st-une-d%C3%A9ception-%C3%A0-2689-328735276c9f" target="_blank" class="publication-link">Read on Medium ↗</a>
+                    </div>
+                    <div class="experience-company">Personal Blog</div>
+                </div>
+                <div class="experience-date">Apr 2025</div>
+            </div>
+        </div>
+        <div class="experience-item">
+            <div class="experience-header">
+                <div>
+                    <div class="experience-title">
+                        From XML to Compose
+                        <a href="https://medium.com/android-digest/from-xml-to-compose-84f262d8193c" target="_blank" class="publication-link">Read on Medium ↗</a>
+                    </div>
+                    <div class="experience-company">Android Digest</div>
+                </div>
+                <div class="experience-date">Dec 2022</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
