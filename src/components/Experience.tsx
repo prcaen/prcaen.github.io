@@ -2,7 +2,7 @@ import { experiences } from '../data/experience';
 
 export function Experience() {
   return (
-    <section id="experience" className="py-24 md:py-32 bg-charcoal text-cream">
+    <section id="experience" className="py-24 md:py-32 bg-charcoal dark:bg-charcoal-light text-cream transition-colors duration-300">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <span className="text-accent font-semibold tracking-wider uppercase text-sm">
@@ -41,7 +41,7 @@ function ExperienceCard({
   return (
     <div className={`relative flex items-center ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
       {/* Timeline dot */}
-      <div className="absolute left-4 md:left-1/2 w-3 h-3 bg-accent rounded-full md:-translate-x-1.5 z-10 ring-4 ring-charcoal" />
+      <div className="absolute left-4 md:left-1/2 w-3 h-3 bg-accent rounded-full md:-translate-x-1.5 z-10 ring-4 ring-charcoal dark:ring-charcoal-light" />
 
       {/* Date badge (mobile) */}
       <div className="md:hidden absolute left-10 top-0 text-sm text-cream/50">

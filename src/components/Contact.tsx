@@ -2,7 +2,7 @@ import { personalInfo } from '../data/personal';
 
 export function Contact() {
   return (
-    <section id="contact" className="py-24 md:py-32 bg-charcoal text-cream">
+    <section id="contact" className="py-24 md:py-32 bg-charcoal dark:bg-charcoal-light text-cream transition-colors duration-300">
       <div className="max-w-4xl mx-auto px-6 text-center">
         <span className="text-accent font-semibold tracking-wider uppercase text-sm">
           Get in Touch

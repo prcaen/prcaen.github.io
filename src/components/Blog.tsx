@@ -9,7 +9,7 @@ export function Blog() {
             <span className="text-accent font-semibold tracking-wider uppercase text-sm">
               Blog
             </span>
-            <h2 className="font-display text-4xl md:text-5xl text-charcoal mt-4">
+            <h2 className="font-display text-4xl md:text-5xl text-charcoal dark:text-cream mt-4">
               Latest <span className="text-accent">Articles</span>
             </h2>
           </div>
@@ -17,7 +17,7 @@ export function Blog() {
             href={personalInfo.social.medium}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-charcoal/70 hover:text-accent transition-colors font-medium"
+            className="inline-flex items-center gap-2 text-charcoal/70 dark:text-cream/70 hover:text-accent transition-colors font-medium"
           >
             View all on Medium
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -63,7 +63,7 @@ function ArticleCard({ article }: { article: typeof articles[0] }) {
               {article.tags.slice(0, 4).map((tag) => (
                 <span
                   key={tag}
-                  className="px-2 py-0.5 text-xs font-medium bg-cream/90 text-charcoal rounded"
+                  className="px-2 py-0.5 text-xs font-medium bg-cream/90 dark:bg-charcoal/90 text-charcoal dark:text-cream rounded"
                 >
                   {tag}
                 </span>
@@ -74,17 +74,17 @@ function ArticleCard({ article }: { article: typeof articles[0] }) {
 
         {/* Article content */}
         <div className="space-y-3">
-          <div className="flex items-center gap-3 text-sm text-charcoal/50">
+          <div className="flex items-center gap-3 text-sm text-charcoal/50 dark:text-cream/50">
             <time dateTime={article.date}>{formatDate(article.date)}</time>
             <span>·</span>
             <span>{article.readTime}</span>
           </div>
 
-          <h3 className="text-xl font-bold text-charcoal group-hover:text-accent transition-colors">
+          <h3 className="text-xl font-bold text-charcoal dark:text-cream group-hover:text-accent transition-colors">
             {article.title}
           </h3>
 
-          <p className="text-charcoal/60 line-clamp-2">
+          <p className="text-charcoal/60 dark:text-cream/60 line-clamp-2">
             {article.description}
           </p>
 

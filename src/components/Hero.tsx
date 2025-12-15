@@ -8,7 +8,7 @@ export function Hero() {
         <div className="absolute top-20 right-[10%] w-72 h-72 bg-accent/10 rounded-full blur-3xl animate-float" />
         <div className="absolute bottom-20 left-[5%] w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px]">
-          <svg viewBox="0 0 200 200" className="w-full h-full opacity-[0.03]">
+          <svg viewBox="0 0 200 200" className="w-full h-full opacity-[0.03] dark:opacity-[0.05]">
             <defs>
               <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
                 <path d="M 20 0 L 0 0 0 20" fill="none" stroke="currentColor" strokeWidth="0.5" />
@@ -26,13 +26,13 @@ export function Hero() {
             {personalInfo.availability.status === 'open' && (
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 rounded-full mb-6 opacity-0 animate-fade-up">
                 <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                <span className="text-sm font-medium text-charcoal/80">
+                <span className="text-sm font-medium text-charcoal/80 dark:text-cream/80">
                   {personalInfo.availability.message}
                 </span>
               </div>
             )}
 
-            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-charcoal leading-[1.1] mb-6 opacity-0 animate-fade-up stagger-1">
+            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-charcoal dark:text-cream leading-[1.1] mb-6 opacity-0 animate-fade-up stagger-1">
               Hi, I'm{' '}
               <span className="text-accent relative">
                 {personalInfo.name.split(' ')[0]}
@@ -49,32 +49,32 @@ export function Hero() {
                   />
                 </svg>
               </span>
-              <span className="block mt-2 text-charcoal/60 text-3xl md:text-4xl lg:text-5xl">
+              <span className="block mt-2 text-charcoal/60 dark:text-cream/60 text-3xl md:text-4xl lg:text-5xl">
                 {personalInfo.title}
               </span>
             </h1>
 
-            <p className="text-lg md:text-xl text-charcoal/60 max-w-xl mx-auto lg:mx-0 mb-6 opacity-0 animate-fade-up stagger-2">
+            <p className="text-lg md:text-xl text-charcoal/60 dark:text-cream/60 max-w-xl mx-auto lg:mx-0 mb-6 opacity-0 animate-fade-up stagger-2">
               {personalInfo.about.short}
             </p>
 
             {/* Quick info badges */}
             <div className="flex flex-wrap gap-3 justify-center lg:justify-start mb-8 opacity-0 animate-fade-up stagger-2">
-              <span className="inline-flex items-center gap-2 px-4 py-2 bg-charcoal/5 rounded-full text-sm font-medium text-charcoal/70">
-                <span>📍</span> {personalInfo.location}
+              <span className="inline-flex items-center gap-2 px-4 py-2 bg-charcoal/5 dark:bg-cream/10 rounded-full text-sm font-medium">
+                <span>📍</span><span className="text-charcoal/70 dark:text-cream/70">{personalInfo.location}</span>
               </span>
-              <span className="inline-flex items-center gap-2 px-4 py-2 bg-charcoal/5 rounded-full text-sm font-medium text-charcoal/70">
-                <span>📱</span>7+ apps shipped
+              <span className="inline-flex items-center gap-2 px-4 py-2 bg-charcoal/5 dark:bg-cream/10 rounded-full text-sm font-medium">
+                <span>📱</span><span className="text-charcoal/70 dark:text-cream/70">7+ apps shipped</span>
               </span>
-              <span className="inline-flex items-center gap-2 px-4 py-2 bg-charcoal/5 rounded-full text-sm font-medium text-charcoal/70">
-                <span>🏢</span> Medium · BlaBlaCar · Yubo
+              <span className="inline-flex items-center gap-2 px-4 py-2 bg-charcoal/5 dark:bg-cream/10 rounded-full text-sm font-medium">
+                <span>🏢</span><span className="text-charcoal/70 dark:text-cream/70">Medium · BlaBlaCar · Yubo</span>
               </span>
             </div>
 
             <div className="flex flex-wrap gap-4 justify-center lg:justify-start opacity-0 animate-fade-up stagger-3">
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-charcoal text-cream font-semibold rounded-full hover:bg-accent transition-all hover:scale-105 active:scale-95"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-charcoal dark:bg-cream text-cream dark:text-charcoal font-semibold rounded-full hover:bg-accent dark:hover:bg-accent dark:hover:text-cream transition-all hover:scale-105 active:scale-95"
               >
                 Get in touch
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -83,7 +83,7 @@ export function Hero() {
               </a>
               <a
                 href="#experience"
-                className="inline-flex items-center gap-2 px-6 py-3 border-2 border-charcoal/20 text-charcoal font-semibold rounded-full hover:border-accent hover:text-accent transition-all"
+                className="inline-flex items-center gap-2 px-6 py-3 border-2 border-charcoal/20 dark:border-cream/20 text-charcoal dark:text-cream font-semibold rounded-full hover:border-accent hover:text-accent transition-all"
               >
                 View experience
               </a>
@@ -97,7 +97,7 @@ export function Hero() {
                   href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 flex items-center justify-center rounded-full bg-charcoal/5 hover:bg-accent hover:text-cream transition-all hover:scale-110"
+                  className="w-10 h-10 flex items-center justify-center rounded-full bg-charcoal/5 dark:bg-cream/10 text-charcoal dark:text-cream hover:bg-accent hover:text-cream transition-all hover:scale-110"
                   aria-label={platform}
                 >
                   <SocialIcon platform={platform} />
@@ -110,7 +110,7 @@ export function Hero() {
           <div className="order-1 lg:order-2 flex justify-center opacity-0 animate-fade-up">
             <div className="relative">
               <div className="w-64 h-64 md:w-80 md:h-80 rounded-3xl bg-gradient-to-br from-accent/20 to-accent/5 p-1">
-                <div className="w-full h-full rounded-3xl bg-cream flex items-center justify-center overflow-hidden">
+                <div className="w-full h-full rounded-3xl bg-cream dark:bg-charcoal flex items-center justify-center overflow-hidden">
                   <img
                     src="/me.jpg"
                     alt={personalInfo.name}
@@ -119,17 +119,17 @@ export function Hero() {
                 </div>
               </div>
               {/* Floating elements */}
-              <div className="absolute -top-4 -right-4 px-4 py-2 bg-white rounded-xl shadow-lg animate-float inline-flex items-center">
+              <div className="absolute -top-4 -right-4 px-4 py-2 bg-white dark:bg-charcoal-light rounded-xl shadow-lg animate-float inline-flex items-center">
                 <span className="text-2xl">🤖</span>
-                <span className="text-sm font-medium ml-2 inline-block">Android</span>
+                <span className="text-sm font-medium ml-2 inline-block text-charcoal dark:text-cream">Android</span>
               </div>
-              <div className="absolute -bottom-4 -right-4 px-4 py-2 bg-white rounded-xl shadow-lg animate-float inline-flex items-center" style={{ animationDelay: '1.6s' }}>
+              <div className="absolute -bottom-4 -right-4 px-4 py-2 bg-white dark:bg-charcoal-light rounded-xl shadow-lg animate-float inline-flex items-center" style={{ animationDelay: '1.6s' }}>
                 <span className="text-2xl">🧠</span>
-                <span className="text-sm font-medium ml-2">Product</span>
+                <span className="text-sm font-medium ml-2 text-charcoal dark:text-cream">Product</span>
               </div>
-              <div className="absolute -top-4 -start-4 px-4 py-2 bg-white rounded-xl shadow-lg animate-float inline-flex items-center" style={{ animationDelay: '1.6s' }}>
+              <div className="absolute -top-4 -start-4 px-4 py-2 bg-white dark:bg-charcoal-light rounded-xl shadow-lg animate-float inline-flex items-center" style={{ animationDelay: '1.6s' }}>
                 <span className="text-2xl">📱</span>
-                <span className="text-sm font-medium ml-2">UI/UX</span>
+                <span className="text-sm font-medium ml-2 text-charcoal dark:text-cream">UI/UX</span>
               </div>
             </div>
           </div>
@@ -137,7 +137,7 @@ export function Hero() {
 
         {/* Scroll indicator */}
         <div className="mt-12 flex justify-center opacity-0 animate-fade-in stagger-6">
-          <div className="flex flex-col items-center gap-2 text-charcoal/40">
+          <div className="flex flex-col items-center gap-2 text-charcoal/40 dark:text-cream/40">
             <span className="text-xs font-medium tracking-wider uppercase">Scroll</span>
             <div className="w-5 h-8 border-2 border-current rounded-full flex justify-center pt-1">
               <div className="w-1 h-2 bg-current rounded-full animate-bounce" />
