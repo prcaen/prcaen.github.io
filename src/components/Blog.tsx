@@ -55,14 +55,12 @@ function ArticleCard({ article }: { article: typeof articles[0] }) {
       >
         {/* Article thumbnail placeholder */}
         <div className="aspect-[16/10] rounded-2xl bg-gradient-to-br from-charcoal to-charcoal-light mb-6 overflow-hidden relative">
-          <div className="absolute inset-0 flex items-center justify-center opacity-20 group-hover:opacity-30 transition-opacity">
-            <svg className="w-24 h-24 text-cream" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-            </svg>
+          <div className="absolute inset-0 flex items-center justify-center opacity-50 group-hover:opacity-60 transition-opacity">
+            <img src={article.imageLink} alt={article.title} className="w-full h-full object-cover" />
           </div>
           <div className="absolute bottom-4 left-4 right-4">
             <div className="flex flex-wrap gap-2">
-              {article.tags.slice(0, 2).map((tag) => (
+              {article.tags.slice(0, 4).map((tag) => (
                 <span
                   key={tag}
                   className="px-2 py-0.5 text-xs font-medium bg-cream/90 text-charcoal rounded"
