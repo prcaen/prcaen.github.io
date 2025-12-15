@@ -54,7 +54,7 @@ function ArticleCard({ article }: { article: typeof articles[0] }) {
         {/* Article thumbnail placeholder */}
         <div className="aspect-[16/10] rounded-2xl bg-gradient-to-br from-charcoal to-charcoal-light mb-6 overflow-hidden relative">
           <div className="absolute inset-0 flex items-center justify-center opacity-50 group-hover:opacity-60 transition-opacity">
-            <img src={article.imageLink} alt={article.title} className="w-full h-full object-cover" />
+            <img src={article.imageLink} alt={article.title} className="w-full h-full object-cover" loading="lazy" />
           </div>
           <div className="absolute bottom-4 left-4 right-4">
             <div className="flex flex-wrap gap-2">

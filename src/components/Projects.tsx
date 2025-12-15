@@ -86,6 +86,7 @@ function AppCard({ project }: { project: typeof projects[0] }) {
             src={project.screenshot}
             alt={`${project.title} screenshot`}
             className="w-full h-full object-cover object-top opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+            loading="lazy"
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center">
@@ -102,6 +103,7 @@ function AppCard({ project }: { project: typeof projects[0] }) {
               src={project.icon}
               alt={`${project.title} icon`}
               className="w-full h-full object-contain"
+              loading="lazy"
             />
           </div>
         )}
@@ -176,6 +178,7 @@ function WebsiteCard({ project }: { project: typeof projects[0] }) {
             src={project.screenshot}
             alt={`${project.title} screenshot`}
             className="w-full h-full object-cover object-top opacity-95 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+            loading="lazy"
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center bg-charcoal/5 dark:bg-cream/5">

@@ -62,6 +62,7 @@ function ExperienceCard({
                 src={experience.logo} 
                 alt={`${experience.company} logo`}
                 className="w-full h-full object-contain"
+                loading="lazy"
               />
             ) : (
               <span className="text-2xl font-bold text-accent">{experience.company[0]}</span>

@@ -50,8 +50,8 @@ export const experiences: Experience[] = [
     company: "BlaBlaCar",
     companyUrl: "https://blablacar.com",
     location: "Paris, France",
-    startDate: "2017",
-    endDate: "2020",
+    startDate: "2015",
+    endDate: "2017",
     description: "Contributed to the world's leading carpooling platform serving millions of users.",
     missions: [
       "Created the Trust Tribe",

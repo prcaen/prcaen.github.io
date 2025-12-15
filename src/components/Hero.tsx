@@ -71,21 +71,31 @@ export function Hero() {
               </span>
             </div>
 
-            <div className="flex flex-wrap gap-4 justify-center lg:justify-start opacity-0 animate-fade-up stagger-3">
+            <div className="flex flex-col md:flex-row gap-4 justify-center lg:justify-start opacity-0 animate-fade-up stagger-3">
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-charcoal dark:bg-cream text-cream dark:text-charcoal font-semibold rounded-full hover:bg-accent dark:hover:bg-accent dark:hover:text-cream transition-all hover:scale-105 active:scale-95"
+                className="w-full md:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 text-sm bg-charcoal dark:bg-cream text-cream dark:text-charcoal font-semibold rounded-full hover:bg-accent dark:hover:bg-accent dark:hover:text-cream transition-all hover:scale-105 active:scale-95"
               >
                 Get in touch
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </a>
               <a
                 href="#experience"
-                className="inline-flex items-center gap-2 px-6 py-3 border-2 border-charcoal/20 dark:border-cream/20 text-charcoal dark:text-cream font-semibold rounded-full hover:border-accent hover:text-accent transition-all"
+                className="w-full md:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 text-sm border-2 border-charcoal/20 dark:border-cream/20 text-charcoal dark:text-cream font-semibold rounded-full hover:border-accent hover:text-accent transition-all"
               >
                 View experience
+              </a>
+              <a
+                href="/resume.pdf"
+                download="Pierrick_Caen_Resume.pdf"
+                className="w-full md:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 text-sm border-2 border-charcoal/20 dark:border-cream/20 text-charcoal dark:text-cream font-semibold rounded-full hover:border-accent hover:text-accent transition-all"
+              >
+                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                Download CV
               </a>
             </div>
 
@@ -115,6 +125,7 @@ export function Hero() {
                     src="/me.jpg"
                     alt={personalInfo.name}
                     className="w-full h-full object-cover rounded-3xl"
+                    loading="lazy"
                   />
                 </div>
               </div>
