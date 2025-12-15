@@ -16,6 +16,7 @@ export interface Project {
   iconBackgroundColor?: string;
   downloads?: string; // e.g., "10M+", "100K+"
   rating?: number; // e.g., 4.5
+  stars?: number; // GitHub star count
 }
 
 export const projects: Project[] = [
@@ -167,7 +168,8 @@ export const projects: Project[] = [
       github: "https://github.com/prcaen/external-resources"
     },
     featured: true,
-    category: "open-source"
+    category: "open-source",
+    stars: 158
   },
   {
     id: "always-finish-activities",
@@ -177,7 +179,8 @@ export const projects: Project[] = [
       github: "https://github.com/prcaen/AlwaysFinishActivities"
     },
     featured: false,
-    category: "tool"
+    category: "tool",
+    stars: 3
   }
 ];
 
