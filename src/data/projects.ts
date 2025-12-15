@@ -14,6 +14,8 @@ export interface Project {
   screenshot?: string;
   icon?: string;
   iconBackgroundColor?: string;
+  downloads?: string; // e.g., "10M+", "100K+"
+  rating?: number; // e.g., 4.5
 }
 
 export const projects: Project[] = [
@@ -28,7 +30,9 @@ export const projects: Project[] = [
     featured: true,
     category: "android-app",
     screenshot: "/screenshots/medium_android.jpeg",
-    icon: "/logos/medium.svg"
+    icon: "/logos/medium.svg",
+    downloads: "10M+",
+    rating: 4.6
   },
   {
     id: "parking-velo-app",
@@ -42,6 +46,7 @@ export const projects: Project[] = [
     screenshot: "/screenshots/parking_velo_android.jpeg",
     icon: "/logos/parking_a_velo.png",
     iconBackgroundColor: "#3B86CB",
+    downloads: "500+"
   },
   {
     id: "yubo-app",
@@ -55,6 +60,8 @@ export const projects: Project[] = [
     screenshot: "/screenshots/yubo_android.jpeg",
     icon: "/logos/yubo.png",
     iconBackgroundColor: "#FBE64C",
+    downloads: "10M+",
+    rating: 4.4
   },
   {
     id: "blablacar-app",
@@ -68,19 +75,23 @@ export const projects: Project[] = [
     screenshot: "/screenshots/blablacar_android.jpeg",
     icon: "/logos/blablacar.png",
     iconBackgroundColor: "#75BAF4",
+    downloads: "100M+",
+    rating: 4.6
   },
   {
     id: "getaround-app",
     title: "Getaround",
     description: "Car sharing marketplace to rent cars from people nearby.",
     links: {
-      playStore: "https://play.google.com/store/apps/details?id=com.getaround"
+      playStore: "https://play.google.com/store/apps/details?id=com.c4mprod.voiturelib"
     },
     featured: true,
     category: "android-app",
     screenshot: "/screenshots/getaround_android.jpeg",
     icon: "/logos/getaround.png",
     iconBackgroundColor: "#AC23C5",
+    downloads: "1M+",
+    rating: 4.5
   },
   {
     id: "prix-carburants-app",
