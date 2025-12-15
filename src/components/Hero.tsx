@@ -1,8 +1,6 @@
-import { personalInfo, getYearsOfExperience } from '../data/personal';
+import { personalInfo } from '../data/personal';
 
 export function Hero() {
-  const yearsOfExperience = getYearsOfExperience();
-
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 pb-12">
       {/* Background decoration */}
@@ -148,17 +146,6 @@ export function Hero() {
         </div>
       </div>
     </section>
-  );
-}
-
-function StatCard({ number, label }: { number: string; label: string }) {
-  return (
-    <div className="text-center p-4 rounded-2xl bg-charcoal/5">
-      <span className="block text-2xl md:text-3xl font-bold text-accent">
-        {number}
-      </span>
-      <span className="text-xs md:text-sm text-charcoal/60 mt-1 block">{label}</span>
-    </div>
   );
 }
 
