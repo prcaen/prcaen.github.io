@@ -9,7 +9,7 @@ export function Experience() {
             Career Journey
           </span>
           <h2 className="font-display text-4xl md:text-5xl mt-4">
-            Where I've <span className="text-accent">worked</span>
+            Experience <span className="text-accent">Timeline</span>
           </h2>
         </div>
 
