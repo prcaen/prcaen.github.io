@@ -88,8 +88,8 @@ export function Hero() {
                 View experience
               </a>
               <a
-                href="/resume.pdf"
-                download="Pierrick_Caen_Resume.pdf"
+                href="/resume.html"
+                download="Pierrick_Caen_Resume.html"
                 className="w-full md:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 text-sm border-2 border-charcoal/20 dark:border-cream/20 text-charcoal dark:text-cream font-semibold rounded-full hover:border-accent hover:text-accent transition-all"
               >
                 <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
