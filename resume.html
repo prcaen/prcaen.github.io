@@ -22,8 +22,91 @@
         }
         
         @media print {
+            @page {
+                size: A4;
+                margin: 10mm;
+            }
+
             body {
-                padding: 20px;
+                padding: 0;
+                max-width: none;
+                font-size: 13px;
+                line-height: 1.45;
+            }
+
+            .header {
+                margin-bottom: 14px;
+                padding-bottom: 10px;
+            }
+
+            .header h1 {
+                font-size: 26px;
+                margin-bottom: 4px;
+            }
+
+            .header .title {
+                font-size: 15px;
+                margin-bottom: 8px;
+            }
+
+            .header .contact {
+                gap: 10px;
+                font-size: 12px;
+            }
+
+            .section {
+                margin-bottom: 16px;
+                break-inside: auto;
+                page-break-inside: auto;
+            }
+
+            .section-title {
+                font-size: 17px;
+                margin-bottom: 10px;
+                padding-bottom: 4px;
+                break-after: avoid;
+                page-break-after: avoid;
+            }
+
+            .summary {
+                font-size: 13px;
+                line-height: 1.5;
+            }
+
+            .experience-item {
+                margin-bottom: 12px;
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+
+            .experience-title, .project-title {
+                font-size: 14px;
+            }
+
+            .experience-company, .project-category,
+            .experience-location, .experience-date,
+            .experience-description,
+            .experience-missions li {
+                font-size: 12px;
+            }
+
+            .experience-missions li {
+                margin-bottom: 4px;
+            }
+
+            .technologies {
+                margin-top: 6px;
+                gap: 4px;
+            }
+
+            .tech-tag {
+                font-size: 10px;
+                padding: 2px 8px;
+            }
+
+            .project-item {
+                break-inside: avoid;
+                page-break-inside: avoid;
             }
         }
         
@@ -240,16 +323,6 @@
             display: inline-block;
             margin: 2px 4px 2px 0;
         }
-        
-        @media print {
-            .section {
-                page-break-inside: avoid;
-            }
-            
-            .experience-item, .project-item {
-                page-break-inside: avoid;
-            }
-        }
     </style>
 </head>
 <body>
@@ -280,7 +353,7 @@
         </p>
     </div>
 
-    <div class="section">
+    <div class="section section-experience">
         <h2 class="section-title">Experience</h2>
         
         <div class="experience-item">
