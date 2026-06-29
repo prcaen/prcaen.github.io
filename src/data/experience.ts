@@ -25,7 +25,7 @@ export const experiences: Experience[] = [
       "Product engineer for the Growth team",
       "Senior Android contributor for multiple teams",
     ],
-    technologies: ["Kotlin", "Jetpack Compose", "Coroutines", "Dagger/Hilt", "GraphQL", "Coil"],
+    technologies: ["Android", "Kotlin", "Jetpack Compose", "Coroutines", "Dagger/Hilt", "GraphQL", "Coil"],
     logo: "/logos/medium.svg"
   },
   {
@@ -41,12 +41,12 @@ export const experiences: Experience[] = [
       "Developed real-time video streaming features with WebRTC integration",
       "Led a team of 6 engineers",
     ],
-    technologies: ["Kotlin", "WebRTC", "RxJava", "Firebase", "MVVM", "Live streaming"],
+    technologies: ["Android", "Kotlin", "WebRTC", "RxJava", "Firebase", "MVVM", "Live streaming"],
     logo: "/logos/yubo.png"
   },
   {
     id: "blablacar",
-    title: "Lead Software Engineer",
+    title: "Lead Software Engineer / Senior Android Engineer",
     company: "BlaBlaCar",
     companyUrl: "https://blablacar.com",
     location: "Paris, France",
@@ -58,12 +58,12 @@ export const experiences: Experience[] = [
       "Lead Software Engineer in a team of 5 software engineers",
       "Built the Lead Engineer role @BlaBlaCar"
     ],
-    technologies: ["Kotlin", "Java", "RxJava", "MVP", "Retrofit"],
+    technologies: ["Android", "Kotlin", "Java", "RxJava", "MVP", "Retrofit"],
     logo: "/logos/blablacar.png"
   },
   {
     id: "mfg",
-    title: "Software Engineer",
+    title: "Software Engineer (Android, Scala)",
     company: "MFG Labs",
     companyUrl: "https://mfglabs.com",
     location: "Paris, France",
@@ -73,12 +73,12 @@ export const experiences: Experience[] = [
       "Build an Android application for Warner Bros",
       "Contributed to the development of Warner Bros France website",
     ],
-    technologies: ["Java", "Scala", "Play Framework", "PostgreSQL"],
+    technologies: ["Android", "Java", "Scala", "Play Framework", "PostgreSQL"],
     logo: "/logos/mfg.svg"
   },
   {
     id: "getaround",
-    title: "Software Engineer",
+    title: "Software Engineer (Android, Rails)",
     company: "Getaround",
     companyUrl: "https://getaround.com",
     location: "Paris, France",
