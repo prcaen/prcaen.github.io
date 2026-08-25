@@ -21,9 +21,11 @@ export const experiences: Experience[] = [
     location: "Paris (Remote)",
     startDate: "2022",
     endDate: "Present",
+    description: "Medium Android app · 10M+ downloads · 4.6★ rating",
     missions: [
-      "Product engineer for the Growth team",
-      "Senior Android contributor for multiple teams",
+      "Own Growth initiatives end-to-end across onboarding, membership conversion, retention, recommendations, notifications, and the reading experience",
+      "Partner with Product, Design, and Data to ship experiments that improve activation, conversion, and reader engagement",
+      "Lead Android technical design and architecture while contributing to backend implementation when needed",
     ],
     technologies: ["Android", "Kotlin", "Jetpack Compose", "Coroutines", "Dagger/Hilt", "GraphQL", "Coil"],
     logo: "/logos/medium.svg"
